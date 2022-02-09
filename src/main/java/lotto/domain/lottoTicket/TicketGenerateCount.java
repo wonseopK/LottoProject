@@ -8,7 +8,7 @@ public class TicketGenerateCount {
     private int count;
 
     private TicketGenerateCount(final long money) {
-
+        this.count = (int) (money / TICKET_PRICE);
         OutputView.println(String.format("%d개를 구매하셨습니다.", count));
     }
 
