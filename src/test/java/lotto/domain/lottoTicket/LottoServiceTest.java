@@ -5,10 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class LottoServiceTest {
     @DisplayName("6자리 로또 번호 생성 기능")
     @Test
@@ -20,16 +16,17 @@ class LottoServiceTest {
 
         Assertions.assertThat(isDuplicated).isEqualTo(false);
         Assertions.assertThat(numberSize).isEqualTo(6);
-
+        System.out.println(lottoTicket.toString());
 
     }
 
-    @DisplayName("로또번호 범위 검사 기능")
-    @RepeatedTest(100)
+    @DisplayName("로또번호 1~45 범위 검사 기능")
+    @RepeatedTest(30)
     void name2() {
         LottoTicket lottoTicket = LottoService.createLottoTicket();
+        System.out.println(lottoTicket.getLottoNumbers().toString());
         for (Integer number : lottoTicket.getLottoNumbers()) {
-            Assertions.assertThat(number).isBetween(1,45);
+            Assertions.assertThat(number).isBetween(1, 45);
         }
     }
 }
