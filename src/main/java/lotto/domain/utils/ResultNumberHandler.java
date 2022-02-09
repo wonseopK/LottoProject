@@ -1,6 +1,5 @@
 package lotto.domain.utils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,6 +11,8 @@ public class ResultNumberHandler {
     }
 
     public static List<Integer> splitResultNumbers(String resultNumbers) {
-        return new ArrayList<>();
+        return Arrays.stream(resultNumbers.split(NUMBER_SPERATOR))
+                .map(number -> Integer.valueOf(number.trim()))
+                .collect(Collectors.toList());
     }
 }

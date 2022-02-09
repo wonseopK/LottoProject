@@ -15,12 +15,14 @@ class ResultNumberHandlerTest {
 
         //when
         List<Integer> winNumbers = ResultNumberHandler.splitResultNumbers(inputNumbers);
-
+        ResultNumberHandler.splitResultNumbers(inputNumbers);
         //then
         Assertions.assertThat(winNumbers.get(0)).isEqualTo(1);
         Assertions.assertThat(winNumbers.get(1)).isEqualTo(2);
         Assertions.assertThat(winNumbers.get(2)).isEqualTo(3);
         Assertions.assertThat(winNumbers.get(3)).isEqualTo(4);
         Assertions.assertThat(winNumbers.get(4)).isEqualTo(5);
+
+
     }
 }
