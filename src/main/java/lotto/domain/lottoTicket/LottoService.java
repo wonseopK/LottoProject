@@ -21,7 +21,9 @@ public class LottoService {
 
     public static LottoTickets giveOrderedTicket(int ticketGenerateCount) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
-
+        for (int i = 0; i < ticketGenerateCount; i++) {
+            lottoTickets.add(LottoService.createLottoTicket());
+        }
         return new LottoTickets(lottoTickets);
     }
 }
