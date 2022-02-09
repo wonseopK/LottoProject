@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RandomUtilsTest {
     @DisplayName("로또 숫자발생하는 메서드 테스트")
-    @RepeatedTest(100)
+    @RepeatedTest(300)
     void name() {
         int maxLimit = 45;
         int minLimit = 1;

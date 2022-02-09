@@ -5,7 +5,7 @@ public class RandomUtils {
     private static int LOTTO_NUMBER_MIN_LIMIT = 1;
 
     public static int lottoNumberGenerator(){
-        int lottoNumber = 0;
+        int lottoNumber = (int) ((Math.random()*LOTTO_NUMBER_MIN_LIMIT+LOTTO_NUMBER_MIN_LIMIT));
         return lottoNumber;
     }
 }
