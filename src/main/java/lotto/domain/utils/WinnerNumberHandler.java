@@ -1,5 +1,8 @@
 package lotto.domain.utils;
 
+import lotto.domain.lottoResult.WinnerNumber;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,5 +18,9 @@ public class WinnerNumberHandler {
                 .map(number -> Integer.valueOf(number.trim()))
                 .sorted()
                 .collect(Collectors.toList());
+    }
+
+    public static WinnerNumber winnerNumberSaver(String winnerNumbers) {
+        return new WinnerNumber(new ArrayList<>());
     }
 }
