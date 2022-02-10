@@ -13,8 +13,8 @@ class WinnerNumberValidatorTest {
     void name() {
         //given
         String winnerNumberCase1 = "1,2,3,4,5";
-        String winnerNumberCase2 = "";
-        String winnerNumberCase3 = "1,2,2,4,5,6";
+        String winnerNumberCase2 = "1,2,3,3,4,5";
+        String winnerNumberCase3 = "1,2,3,4,5,6";
         WinnerNumberHandler.winnerNumberSaver(winnerNumberCase3);
 
         //then
@@ -26,5 +26,6 @@ class WinnerNumberValidatorTest {
 //                .isInstanceOf(IllegalArgumentException.class).hasMessage("6개의 당첨 번호를 입력해주세요");
 //        Assertions.assertThatThrownBy(()->WinnerNumberHandler.winnerNumberSaver(winnerNumberCase4))
 //                .isInstanceOf(IllegalArgumentException.class).hasMessage("1~45사이의 숫자만 입력해주세요");
+        //옮겨야함 네임스플릿터로
     }
 }
