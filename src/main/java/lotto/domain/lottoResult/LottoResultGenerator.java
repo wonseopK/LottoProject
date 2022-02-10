@@ -8,6 +8,6 @@ public class LottoResultGenerator {
     }
 
     public static int countBonusNumber(BonusNumber bonusNumber, LottoTicket lottoTicket) {
-        return 0;
+        return (int) lottoTicket.getLottoNumbers().stream().filter(number -> number == bonusNumber.getBonusNumber()).count();
     }
 }
