@@ -2,15 +2,19 @@ package lotto.view;
 
 import lotto.domain.lottoTicket.Money;
 import lotto.domain.lottoTicket.TicketGenerateCount;
+import lotto.domain.utils.WinnerNumberHandler;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class InputViewTest {
+    final Scanner scanner = new Scanner(System.in);
+
     @DisplayName("금액 입력후 구입 횟수로 변환해주는 테스트")
     @Test
     void createCount(){
@@ -21,4 +25,5 @@ class InputViewTest {
 
         Assertions.assertThat(resultCount.getCount()).isEqualTo(5);
     }
+
 }
