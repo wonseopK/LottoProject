@@ -14,7 +14,6 @@ public class WinnerNumberValidator {
         boolean isValidSize = WinnerNumberValidator.checkIsValidSize(winnerNumbers);
         boolean isDuplicated = WinnerNumberValidator.checkIsDuplicated(winnerNumbers);
         boolean checkIsValidRangeNumbers = WinnerNumberValidator.checkIsValidRangeNumbers(winnerNumbers);
-        System.out.println("출력" + checkIsValidRangeNumbers);
 
         if (!isValidSize) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");

@@ -71,7 +71,7 @@ class LottoResultGeneratorTest {
 
         //when
         int result = LottoResultGenerator.countWinNumber(winnerNumber,lottoTicket);
-
+        OutputView.println("일치갯수"+LottoResultGenerator.countWinNumber(winnerNumber,lottoTicket));
         //then
         Assertions.assertThat(result).isEqualTo(3);
 
