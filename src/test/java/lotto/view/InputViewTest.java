@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoTicket.Money;
 import lotto.domain.lottoTicket.TicketGenerateCount;
 import lotto.domain.utils.WinnerNumberHandler;
@@ -17,7 +18,7 @@ class InputViewTest {
 
     @DisplayName("금액 입력후 구입 횟수로 변환해주는 테스트")
     @Test
-    void createCount(){
+    void createCount() {
         Money inputMoney = Money.create(5000);
         final long ticketMoney = inputMoney.getMoney();
 
@@ -26,4 +27,16 @@ class InputViewTest {
         Assertions.assertThat(resultCount.getCount()).isEqualTo(5);
     }
 
+    @DisplayName("보너스 볼 생성 테스트")
+    @Test
+    void createBonusBall() {
+        //given
+        int input = 1;
+
+        //when
+        BonusNumber bonusNumber = new BonusNumber(input);
+
+        //then
+        Assertions.assertThat(bonusNumber.getBonusNumber()).isEqualTo(1);
+    }
 }
