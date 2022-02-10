@@ -14,11 +14,16 @@ public class WinnerNumberValidator {
 
         boolean isValidSize = WinnerNumberValidator.checkIsValidSize(winnerNumbers);
         boolean isDuplicated = WinnerNumberValidator.checkIsDuplicated(winnerNumbers);
+        boolean checkIsValidRangeNumbers = WinnerNumberValidator.checkIsValidRangeNumbers(winnerNumbers);
+
         if (!isValidSize) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
         }
         if (!isDuplicated) {
             throw new IllegalArgumentException("중복 없이 입력해주세요");
+        }
+        if(!checkIsValidRangeNumbers){
+            throw new IllegalArgumentException("");
         }
 
     }
@@ -34,4 +39,16 @@ public class WinnerNumberValidator {
                 .count();
         return distinctedCount == LOTTO_NUMBER_SIZE;
     }
+
+    private static boolean checkIsValidRangeNumbers(List<Integer> winnerNumbers){
+        for (Integer winnerNumber : winnerNumbers) {
+            return checkIsValidRangeNumber(winnerNumber);
+        }
+        return true;
+    }
+
+    private static boolean checkIsValidRangeNumber(int number) {
+        return number >= 1 && number <= 45;
+    }
+
 }
