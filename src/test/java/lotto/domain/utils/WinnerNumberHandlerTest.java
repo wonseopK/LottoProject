@@ -24,4 +24,14 @@ class WinnerNumberHandlerTest {
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(4)).isEqualTo(5);
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(5)).isEqualTo(6);
     }
+    @DisplayName("당첨 번호 범위 1~45, 숫자인지 유효성 검사")
+    @Test
+    void name() {
+        //given
+
+
+        //when
+
+        //then
+    }
 }
