@@ -5,6 +5,8 @@ import lotto.domain.validator.lottoResult.WinnerNumberValidator;
 import java.util.List;
 
 public class WinnerNumber {
+    private BonusNumber bonusNumber;
+
     private List<Integer> winnerNumbers;
 
     public WinnerNumber(List<Integer> winnerNumbers) {
@@ -14,5 +16,13 @@ public class WinnerNumber {
 
     public List<Integer> getWinnerNumbers() {
         return winnerNumbers;
+    }
+
+    public BonusNumber getBonusNumber() {
+        return bonusNumber;
+    }
+
+    public void setBonusNumber(BonusNumber bonusNumber) {
+        this.bonusNumber = bonusNumber;
     }
 }

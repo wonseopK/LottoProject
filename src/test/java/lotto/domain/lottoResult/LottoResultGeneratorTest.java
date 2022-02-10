@@ -53,7 +53,7 @@ class LottoResultGeneratorTest {
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
 
         //when
-        int resultCount = LottoResultGenerator.checkIsBonusNumber(bonusNumber, lottoTicket);//when
+        boolean resultCount = LottoResultGenerator.checkIsBonusNumber(bonusNumber, lottoTicket);//when
         OutputView.println("맞추었는지" + LottoResultGenerator.checkIsBonusNumber(bonusNumber, lottoTicket));
 
 
@@ -84,9 +84,12 @@ class LottoResultGeneratorTest {
         //given
         List<Integer> lottoNumbers = Arrays.asList(1,2,3,4,5,6);
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
+        BonusNumber bonusNumber = new BonusNumber(5);
 
-        List<Integer> winnerNumbers = Arrays.asList(1,2,3,6,7,8);
+        List<Integer> winnerNumbers = Arrays.asList(1,2,3,6,7,4);
         WinnerNumber winnerNumber = new WinnerNumber(winnerNumbers);
+        winnerNumber.setBonusNumber(bonusNumber);
+
 
         List<LottoTicket> lottoTicketsList = new ArrayList<>();
         lottoTicketsList.add(lottoTicket);
@@ -96,7 +99,7 @@ class LottoResultGeneratorTest {
         LottoResult lottoResult = LottoResultGenerator.createLottoResult(winnerNumber,lottoTickets);
 
         //then
-        Assertions.assertThat(lottoResult.getResult().get(3)).isEqualTo(1);
+        Assertions.assertThat(lottoResult.getResult().get(7)).isEqualTo(1);
 
     }
 }
