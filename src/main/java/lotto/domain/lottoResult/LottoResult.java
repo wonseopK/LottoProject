@@ -1,5 +1,7 @@
 package lotto.domain.lottoResult;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class LottoResult {
@@ -9,6 +11,25 @@ public class LottoResult {
 
     public LottoResult(Map<Integer, Integer> result) {
         this.result = result;
+    }
+
+    public long calculateTotalWinningMoney() {
+        List<Long> winMoneyLevel = winMoneyLevel();
+        long totalWinningMoney = 0;
+        for (int i = 3; i < 8; i++) {
+            totalWinningMoney += result.get(i) * winMoneyLevel.get(i-3);
+        }
+        return totalWinningMoney;
+    }
+
+    private static List<Long> winMoneyLevel() {
+        List<Long> winMoneyLevel = new ArrayList<>();
+        winMoneyLevel.add(5000L);
+        winMoneyLevel.add(50000L);
+        winMoneyLevel.add(1500000L);
+        winMoneyLevel.add(2000000000L);
+        winMoneyLevel.add(30000000L);
+        return winMoneyLevel;
     }
 
     @Override
