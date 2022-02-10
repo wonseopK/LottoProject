@@ -43,7 +43,6 @@ public class WinnerNumberValidator {
         int erroCount = (int) winnerNumbers.stream()
                 .filter(number -> checkIsValidRangeNumber(number))
                 .count();
-        System.out.println(erroCount);
         return erroCount < 1;
     }
 
