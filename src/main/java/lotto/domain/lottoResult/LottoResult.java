@@ -21,4 +21,8 @@ public class LottoResult {
                 result.getOrDefault(5, DEFAULT_VALUE),
                 result.getOrDefault(6, DEFAULT_VALUE));
     }
+
+    public Map<Integer, Integer> getResult() {
+        return result;
+    }
 }

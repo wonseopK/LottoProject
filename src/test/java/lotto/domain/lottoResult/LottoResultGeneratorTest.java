@@ -2,6 +2,7 @@ package lotto.domain.lottoResult;
 
 import lotto.domain.lottoTicket.LottoService;
 import lotto.domain.lottoTicket.LottoTicket;
+import lotto.domain.lottoTicket.LottoTickets;
 import lotto.domain.utils.WinnerNumberHandler;
 import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
@@ -64,16 +65,38 @@ class LottoResultGeneratorTest {
     @Test
     void name3() {
         //given
-        List<Integer> winnerNumbers = Arrays.asList(1,2,3,4,5,6);
+        List<Integer> winnerNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
         WinnerNumber winnerNumber = new WinnerNumber(winnerNumbers);
-        List<Integer> lottoNumbers = Arrays.asList(1,3,6,7,9,10);
+        List<Integer> lottoNumbers = Arrays.asList(1, 3, 6, 7, 9, 10);
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
 
         //when
-        int result = LottoResultGenerator.countWinNumber(winnerNumber,lottoTicket);
-        OutputView.println("일치갯수"+LottoResultGenerator.countWinNumber(winnerNumber,lottoTicket));
+        int result = LottoResultGenerator.countWinNumber(winnerNumber, lottoTicket);
+        OutputView.println("일치갯수" + LottoResultGenerator.countWinNumber(winnerNumber, lottoTicket));
         //then
         Assertions.assertThat(result).isEqualTo(3);
+
+    }
+
+    @DisplayName("로또번호 맞춘 갯수별로 정리해주는 기능 테스트")
+    @Test
+    void name4() {
+        //given
+        List<Integer> lottoNumbers = Arrays.asList(1,2,3,4,5,6);
+        LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
+
+        List<Integer> winnerNumbers = Arrays.asList(1,2,3,6,7,8);
+        WinnerNumber winnerNumber = new WinnerNumber(winnerNumbers);
+
+        List<LottoTicket> lottoTicketsList = new ArrayList<>();
+        lottoTicketsList.add(lottoTicket);
+        LottoTickets lottoTickets = new LottoTickets(lottoTicketsList);
+
+        //when
+        LottoResult lottoResult = LottoResultGenerator.createLottoResult(winnerNumber,lottoTickets);
+
+        //then
+        Assertions.assertThat(lottoResult.getResult().get(3)).isEqualTo(1);
 
     }
 }
