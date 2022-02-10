@@ -1,5 +1,6 @@
 package lotto.domain.utils;
 
+import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.validator.utils.WinnerNumberHandlerValidator;
 
@@ -21,8 +22,8 @@ public class WinnerNumberHandler {
                 .collect(Collectors.toList());
     }
 
-    public static WinnerNumber winnerNumberSaver(String inputNumbers) {
+    public static WinnerNumber winnerNumberSaver(String inputNumbers, BonusNumber bonusNumber) {
         List<Integer> winnerNumbers = WinnerNumberHandler.splitResultNumbers(inputNumbers);
-        return new WinnerNumber(winnerNumbers);
+        return new WinnerNumber(winnerNumbers, bonusNumber);
     }
 }

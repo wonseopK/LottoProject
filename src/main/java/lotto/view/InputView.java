@@ -22,7 +22,10 @@ public class InputView {
 
     public static WinnerNumber inputWinnerNumber() {
         OutputView.println("지난주 당첨 번호를 ','로 구분하여 입력해주세요");
-        return WinnerNumberHandler.winnerNumberSaver(scanner.nextLine());
+        String winnerNumbers = scanner.nextLine();
+        BonusNumber bonusNumber = inputBonusNumber();
+
+        return WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber);
     }
 
     public static BonusNumber inputBonusNumber() {

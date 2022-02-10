@@ -8,9 +8,10 @@ public class WinnerNumber {
     private BonusNumber bonusNumber;
     private final List<Integer> winnerNumbers;
 
-    public WinnerNumber(List<Integer> winnerNumbers) {
+    public WinnerNumber(List<Integer> winnerNumbers, BonusNumber bonusNumber) {
         WinnerNumberValidator.checkIsValid(winnerNumbers);
         this.winnerNumbers = winnerNumbers;
+        this.bonusNumber = bonusNumber;
     }
 
     public List<Integer> getWinnerNumbers() {
@@ -22,7 +23,4 @@ public class WinnerNumber {
     }
 
     // TODO: 2022/02/10 set쓰지않기
-    public void setBonusNumber(BonusNumber bonusNumber) {
-        this.bonusNumber = bonusNumber;
-    }
 }

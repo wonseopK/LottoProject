@@ -1,5 +1,6 @@
 package lotto.domain.utils;
 
+import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -11,8 +12,10 @@ class WinnerNumberHandlerTest {
     void name2() {
         //given
         String inputNumbers = "1,2,3,4,5,6";
+
+        BonusNumber bonusNumber = new BonusNumber(9);
         //when
-        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(inputNumbers);
+        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(inputNumbers, bonusNumber);
 
         //then
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(0)).isEqualTo(1);
