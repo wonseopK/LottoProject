@@ -2,6 +2,7 @@ package lotto.domain.lottoResult;
 
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
+import lotto.domain.utils.WinnerNumberHandler;
 import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -63,8 +64,9 @@ class LottoResultGeneratorTest {
     @Test
     void name3() {
         //given
-        List<Integer> winnerNumbers = Arrays.asList(1, 2, 3, 4, 5, 6);
-        WinnerNumber winnerNumber = new WinnerNumber(winnerNumbers);
+        String winnerNumbers = "1,2,3,4,5,6";
+        BonusNumber bonusNumber = new BonusNumber(8);
+        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(winnerNumbers,bonusNumber);
         List<Integer> lottoNumbers = Arrays.asList(1, 3, 6, 7, 9, 10);
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
 
@@ -84,9 +86,8 @@ class LottoResultGeneratorTest {
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
         BonusNumber bonusNumber = new BonusNumber(5);
 
-        List<Integer> winnerNumbers = Arrays.asList(1,2,3,6,7,4);
-        WinnerNumber winnerNumber = new WinnerNumber(winnerNumbers);
-        winnerNumber.setBonusNumber(bonusNumber);
+        String winnerNumbers = "1,2,3,4,6,7";
+        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(winnerNumbers,bonusNumber);
 
 
         List<LottoTicket> lottoTicketsList = new ArrayList<>();
