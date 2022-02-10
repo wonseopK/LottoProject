@@ -5,8 +5,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
 class WinnerNumberHandlerTest {
     @DisplayName("당첨 번호를 스트링으로 입력받아 분리해서 당첨번호 객체를 만드는 기능 테스트")
     @Test
@@ -24,6 +22,7 @@ class WinnerNumberHandlerTest {
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(4)).isEqualTo(5);
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(5)).isEqualTo(6);
     }
+
     @DisplayName("당첨 번호 범위 1~45, 숫자인지 유효성 검사")
     @Test
     void name() {

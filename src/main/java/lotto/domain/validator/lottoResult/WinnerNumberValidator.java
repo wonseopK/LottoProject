@@ -1,7 +1,5 @@
 package lotto.domain.validator.lottoResult;
 
-import lotto.domain.lottoResult.WinnerNumber;
-import lotto.view.OutputView;
 
 import java.util.List;
 
@@ -44,7 +42,7 @@ public class WinnerNumberValidator {
 
     private static boolean checkIsValidRangeNumbers(List<Integer> winnerNumbers) {
         int erroCount = (int) winnerNumbers.stream()
-                .filter(number->checkIsValidRangeNumber(number))
+                .filter(number -> checkIsValidRangeNumber(number))
                 .count();
         System.out.println(erroCount);
         return erroCount < 1;

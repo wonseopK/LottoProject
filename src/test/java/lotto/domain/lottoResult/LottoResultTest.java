@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class LottoResultTest {
     @DisplayName("당첨 결과를 스트링으로 반환하는 테스트")

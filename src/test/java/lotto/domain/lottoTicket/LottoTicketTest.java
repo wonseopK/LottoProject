@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class LottoTicketTest {
     @DisplayName("로또티켓 생성 테스트")

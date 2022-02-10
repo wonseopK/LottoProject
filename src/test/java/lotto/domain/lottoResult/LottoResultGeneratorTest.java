@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class LottoResultGeneratorTest {
     @DisplayName("당첨번호와 구입한 티켓을 비교해서 맞춘 갯수를 바환하는 기능 테스트")

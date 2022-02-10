@@ -1,12 +1,10 @@
 package lotto.domain.validator.lottoResult;
 
-import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.utils.WinnerNumberHandler;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class WinnerNumberValidatorTest {
     @DisplayName("당첨번호의 유효성 검사 기능 테스트")

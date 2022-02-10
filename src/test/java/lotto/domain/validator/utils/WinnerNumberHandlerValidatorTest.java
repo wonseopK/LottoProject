@@ -1,6 +1,5 @@
 package lotto.domain.validator.utils;
 
-import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.utils.WinnerNumberHandler;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +17,7 @@ class WinnerNumberHandlerValidatorTest {
         WinnerNumberHandler.winnerNumberSaver(case3);
 
         //then
-        Assertions.assertThatThrownBy(()->WinnerNumberHandler.winnerNumberSaver(case1))
+        Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(case1))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("숫자만 입력해주세요");
     }
 }

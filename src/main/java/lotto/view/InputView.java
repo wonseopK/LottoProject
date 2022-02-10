@@ -6,7 +6,6 @@ import lotto.domain.lottoTicket.Money;
 import lotto.domain.lottoTicket.TicketGenerateCount;
 import lotto.domain.utils.WinnerNumberHandler;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
@@ -32,7 +31,7 @@ public class InputView {
         return new BonusNumber(bonusNumber);
     }
 
-    public static int validateIntReader(Scanner scanner){
+    public static int validateIntReader(Scanner scanner) {
         try {
             int validateNumber = scanner.nextInt();
             return validateNumber;
