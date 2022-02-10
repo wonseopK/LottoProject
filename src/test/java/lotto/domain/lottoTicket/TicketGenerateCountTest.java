@@ -1,5 +1,6 @@
 package lotto.domain.lottoTicket;
 
+import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,9 +13,9 @@ class TicketGenerateCountTest {
     void name() {
         //given
         long money = 123455;
-
         //when
         TicketGenerateCount count = TicketGenerateCount.create(money);
+        OutputView.println("횟수 : " + count.getCount());
 
         //then
         Assertions.assertThat(count.getCount()).isEqualTo(123);
