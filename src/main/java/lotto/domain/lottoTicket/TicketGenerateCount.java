@@ -10,7 +10,7 @@ public class TicketGenerateCount {
     private TicketGenerateCount(Money money) {
         this.count = (int) (money.getMoney() / TICKET_PRICE);
         OutputView.println(String.format("%d개를 구매하셨습니다.", count));
-        //OutputView.println(String.format("거스름돈은 d%",));
+        OutputView.println(money.changePrint());
     }
 
     public static TicketGenerateCount create(Money money) {
