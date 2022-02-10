@@ -6,7 +6,7 @@ public class LottoResultGenerator {
     public static int countWinNumber(WinnerNumber winnerNumbers, LottoTicket lottoTicket){
         int countWinNumber = 0;
         for (Integer winnerNumber : winnerNumbers.getWinnerNumbers()) {
-            countWinNumber += checkIsWinNumber(winnerNumber,lottoTicket);
+
         }
         return countWinNumber;
     }
