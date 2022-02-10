@@ -14,10 +14,9 @@ public class InputView {
     private InputView() {
     }
 
-    public static TicketGenerateCount inputMoney() {
+    public static Money inputMoney() {
         OutputView.println("구입 금액을 입력해주세요");
-        Money inputMoney = Money.create(validateIntReader(scanner));
-        return TicketGenerateCount.create(inputMoney);
+        return Money.create(validateIntReader(scanner));
     }
 
     public static WinnerNumber inputWinnerNumber() {
@@ -28,7 +27,7 @@ public class InputView {
         return WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber);
     }
 
-    public static BonusNumber inputBonusNumber() {
+    private static BonusNumber inputBonusNumber() {
         OutputView.println("보너스 숫자를 입력해주세요");
         int bonusNumber = InputView.validateIntReader(scanner);
         return new BonusNumber(bonusNumber);
