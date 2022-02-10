@@ -8,25 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 class WinnerNumberHandlerTest {
-    @DisplayName(",로 구분하여 입력한숫자를 List로 반환해주는 기능")
-    @Test
-    void name() {
-        //given
-        String inputNumbers = "1,2,3,4,5";
-
-        //when
-        List<Integer> winNumbers = WinnerNumberHandler.splitResultNumbers(inputNumbers);
-        WinnerNumberHandler.splitResultNumbers(inputNumbers);
-        //then
-        Assertions.assertThat(winNumbers.get(0)).isEqualTo(1);
-        Assertions.assertThat(winNumbers.get(1)).isEqualTo(2);
-        Assertions.assertThat(winNumbers.get(2)).isEqualTo(3);
-        Assertions.assertThat(winNumbers.get(3)).isEqualTo(4);
-        Assertions.assertThat(winNumbers.get(4)).isEqualTo(5);
-
-
-    }
-    @DisplayName("당첨 번호를 입력받아 당첨번호 객체를 만드는 기능 테스트")
+    @DisplayName("당첨 번호를 스트링으로 입력받아 분리해서 당첨번호 객체를 만드는 기능 테스트")
     @Test
     void name2() {
         //given
