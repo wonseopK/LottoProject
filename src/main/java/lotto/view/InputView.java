@@ -9,7 +9,7 @@ import lotto.domain.utils.WinnerNumberHandler;
 import java.util.Scanner;
 
 public class InputView {
-    static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     private InputView() {
     }
@@ -33,8 +33,8 @@ public class InputView {
 
     public static int validateIntReader(Scanner scanner) {
         try {
-            int validateNumber = scanner.nextInt();
-            return validateNumber;
+            String validateNumber = scanner.nextLine();
+            return Integer.parseInt(validateNumber);
         } catch (Exception e) {
             throw new IllegalArgumentException("숫자를 입력해주세요");
         }

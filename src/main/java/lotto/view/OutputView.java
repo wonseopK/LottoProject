@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.domain.lottoResult.LottoResult;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
 
@@ -15,7 +16,11 @@ public class OutputView {
         for (LottoTicket lottoTicket : lottoTickets.getLottoTickets()) {
             OutputView.println(lottoTicket.toString());
         }
-
     }
 
+    public static void printLottoResult(LottoResult lottoResult) {
+        System.out.println("당첨 통계\n" +
+                "---------\n" +
+                lottoResult.toString());
+    }
 }

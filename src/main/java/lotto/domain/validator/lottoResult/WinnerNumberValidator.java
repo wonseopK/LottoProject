@@ -10,12 +10,12 @@ public class WinnerNumberValidator {
     }
 
     public static void checkIsValid(List<Integer> winnerNumbers) {
+        // TODO: 2022/02/10
+        boolean isValidSize = checkIsValidSize(winnerNumbers);
+        boolean isDuplicated = checkIsDuplicated(winnerNumbers);
+        boolean checkIsValidRangeNumbers = checkIsValidRangeNumbers(winnerNumbers);
 
-        boolean isValidSize = WinnerNumberValidator.checkIsValidSize(winnerNumbers);
-        boolean isDuplicated = WinnerNumberValidator.checkIsDuplicated(winnerNumbers);
-        boolean checkIsValidRangeNumbers = WinnerNumberValidator.checkIsValidRangeNumbers(winnerNumbers);
-
-        if (!isValidSize) {
+        if (!checkIsValidSize(winnerNumbers)) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
         }
         if (!isDuplicated) {

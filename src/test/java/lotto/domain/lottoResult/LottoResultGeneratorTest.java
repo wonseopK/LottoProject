@@ -1,9 +1,7 @@
 package lotto.domain.lottoResult;
 
-import lotto.domain.lottoTicket.LottoService;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
-import lotto.domain.utils.WinnerNumberHandler;
 import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

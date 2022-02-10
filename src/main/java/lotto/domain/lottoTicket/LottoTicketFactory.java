@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class LottoService {
+public class LottoTicketFactory {
 
     private static LottoTicket createLottoTicket() {
         List<Integer> lottoNumbers = new Random()
@@ -22,7 +22,7 @@ public class LottoService {
     public static LottoTickets giveOrderedTicket(int ticketGenerateCount) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         for (int i = 0; i < ticketGenerateCount; i++) {
-            lottoTickets.add(LottoService.createLottoTicket());
+            lottoTickets.add(LottoTicketFactory.createLottoTicket());
         }
         return new LottoTickets(lottoTickets);
     }

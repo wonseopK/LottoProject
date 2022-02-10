@@ -6,8 +6,7 @@ import java.util.List;
 
 public class WinnerNumber {
     private BonusNumber bonusNumber;
-
-    private List<Integer> winnerNumbers;
+    private final List<Integer> winnerNumbers;
 
     public WinnerNumber(List<Integer> winnerNumbers) {
         WinnerNumberValidator.checkIsValid(winnerNumbers);
@@ -22,6 +21,7 @@ public class WinnerNumber {
         return bonusNumber;
     }
 
+    // TODO: 2022/02/10 set쓰지않기
     public void setBonusNumber(BonusNumber bonusNumber) {
         this.bonusNumber = bonusNumber;
     }

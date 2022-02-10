@@ -26,9 +26,7 @@ public class LottoResultGenerator {
         LottoResult lottoResult = new LottoResult(createBaseLottoResult());
         for (LottoTicket lottoTicket : lottoTickets.getLottoTickets()) {
             boolean isBonusNumber = checkIsBonusNumber(winnerNumber.getBonusNumber(), lottoTicket);
-            System.out.println("보너스" + isBonusNumber);
             int resultCount = countWinNumber(winnerNumber, lottoTicket);
-            System.out.println(resultCount);
             if (resultCount == 3) {
                 count3++;
             }
