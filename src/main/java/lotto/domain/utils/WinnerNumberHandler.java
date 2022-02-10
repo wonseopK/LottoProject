@@ -1,6 +1,7 @@
 package lotto.domain.utils;
 
 import lotto.domain.lottoResult.WinnerNumber;
+import lotto.domain.validator.utils.WinnerNumberHandlerValidator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +14,7 @@ public class WinnerNumberHandler {
     }
 
     private static List<Integer> splitResultNumbers(String resultNumbers) {
+        WinnerNumberHandlerValidator.validateNumber(resultNumbers);
         return Arrays.stream(resultNumbers.split(NUMBER_SPERATOR))
                 .map(number -> Integer.valueOf(number.trim()))
                 .sorted()
