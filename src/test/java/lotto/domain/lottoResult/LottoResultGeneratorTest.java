@@ -2,6 +2,7 @@ package lotto.domain.lottoResult;
 
 import lotto.domain.lottoTicket.LottoService;
 import lotto.domain.lottoTicket.LottoTicket;
+import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ class LottoResultGeneratorTest {
     @Test
     void name() {
         //given
-        int winNumber = 3;
+        int winNumber = 2;
         List<Integer> lottoNumbers = new ArrayList<>();
         lottoNumbers.add(1);
         lottoNumbers.add(2);
@@ -27,7 +28,9 @@ class LottoResultGeneratorTest {
         LottoTicket lottoTicket = new LottoTicket(lottoNumbers);
 
         //when
-        int resultCount = LottoResultGenerator.countWinNumber(winNumber,lottoTicket);//when
+        int resultCount = LottoResultGenerator.countWinNumber(winNumber, lottoTicket);//when
+        OutputView.println("맞춘갯수" + LottoResultGenerator.countWinNumber(winNumber, lottoTicket));
+
 
         //then
         Assertions.assertThat(resultCount).isEqualTo(1);
