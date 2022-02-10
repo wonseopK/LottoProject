@@ -1,0 +1,20 @@
+package lotto.domain.validator.lottoResult;
+
+import lotto.domain.lottoResult.BonusNumber;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class BonusNumberValidatorTest {
+    @DisplayName("보너스볼에 대한 유효성 검사")
+    @ParameterizedTest
+    @ValueSource(ints = {-1,0,46})
+    void name(int number) {
+        Assertions.assertThatThrownBy(()->new BonusNumber(number))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+}
