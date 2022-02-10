@@ -33,9 +33,7 @@ public class LottoTicket {
 
     @Override
     public String toString() {
-        return "LottoTicket{" +
-                "lottoNumbers=" + lottoNumbers +
-                '}';
+        return "" + lottoNumbers;
     }
 
     public List<Integer> getLottoNumbers() {
