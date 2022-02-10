@@ -1,20 +1,30 @@
 package lotto.domain.lottoResult;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProfitCalculatorTest {
-    @DisplayName("수익률 계산 테스트")
     @Test
     void name() {
-        int spendMoney = 5000;
-        int earnMoney = 10000;
+        //given
+        long spendMoney = 15000;
+        Map<Integer, Integer> lotto = new HashMap<>();
+        lotto.put(3,1);
+        lotto.put(4,0);
+        lotto.put(5,0);
+        lotto.put(6,0);
+        lotto.put(7,0);
+        LottoResult lottoResult = new LottoResult(lotto);
 
-        String result = ProfitCalculator.calculateProfit(spendMoney, earnMoney);
+        //when
+        String calculateProfit = ProfitCalculator.calculateProfit(spendMoney, lottoResult);
 
-        Assertions.assertThat(result).isEqualTo("200");
+        //then
+        Assertions.assertThat(calculateProfit).isEqualTo("0.33");
     }
 }
