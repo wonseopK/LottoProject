@@ -20,9 +20,8 @@ class InputViewTest {
     @Test
     void createCount() {
         Money inputMoney = Money.create(5000);
-        final long ticketMoney = inputMoney.getMoney();
 
-        TicketGenerateCount resultCount = TicketGenerateCount.create(ticketMoney);
+        TicketGenerateCount resultCount = TicketGenerateCount.create(inputMoney);
 
         Assertions.assertThat(resultCount.getCount()).isEqualTo(5);
     }

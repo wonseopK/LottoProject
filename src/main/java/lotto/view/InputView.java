@@ -17,9 +17,8 @@ public class InputView {
 
     public static TicketGenerateCount inputMoney() {
         OutputView.println("구입 금액을 입력해주세요");
-        Money inputMoney = Money.create(scanner.nextInt());
-        final long ticketMoney = inputMoney.getMoney();
-        return TicketGenerateCount.create(ticketMoney);
+        Money inputMoney = Money.create(validateIntReader(scanner));
+        return TicketGenerateCount.create(inputMoney);
     }
 
     public static WinnerNumber inputWinnerNumber() {

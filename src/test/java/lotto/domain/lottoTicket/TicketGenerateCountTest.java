@@ -12,7 +12,7 @@ class TicketGenerateCountTest {
     @Test
     void name() {
         //given
-        long money = 123455;
+        Money money = Money.create(123456);
         //when
         TicketGenerateCount count = TicketGenerateCount.create(money);
         OutputView.println("횟수 : " + count.getCount());
