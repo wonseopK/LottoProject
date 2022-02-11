@@ -8,7 +8,7 @@ public class WinnerPrize {
         SECOND(5, 1500000),
         BONUS(5, 30000000),
         THIRD(4, 50000),
-        FOURTH(5, 5000),
+        FOURTH(3, 5000),
         NOMATCH(0, 0);
 
         private final int matchNumbers;
@@ -43,6 +43,7 @@ public class WinnerPrize {
         }
         return Rank.SECOND;
     }
+
     public static long getTotalPrize(List<Rank> lottoResult) {
         return lottoResult.stream().mapToLong(rank -> rank.prize).sum();
     }
