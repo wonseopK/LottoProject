@@ -7,8 +7,7 @@ public enum Rank {
     SECOND(5, 1500000),
     BONUS(5, 30000000),
     THIRD(4, 50000),
-    FOURTH(3, 5000),
-    NOMATCH(0, 0);
+    FOURTH(3, 5000);
 
     private final int matchNumbers;
     private final long prize;
@@ -23,16 +22,11 @@ public enum Rank {
             return validateBonusNumberMatch(bonus);
         }
         for (Rank rank : Rank.values()) {
-            validateMatchRank(rank, matchNum);
+            if (rank.matchNumbers == matchNum) {
+                return rank;
+            }
         }
-        return Rank.NOMATCH;
-    }
-
-    private static Rank validateMatchRank(Rank rank, int matchNum) {
-        if (rank.matchNumbers == matchNum) {
-            return rank;
-        }
-        return Rank.NOMATCH;
+        return null;
     }
 
     private static Rank validateBonusNumberMatch(boolean isMatchBonusNumber) {

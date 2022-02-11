@@ -47,6 +47,7 @@ public class LottoResultFactory {
             long countRank = result.stream()
                     .filter(rank -> rank == rankValue)
                     .count();
+            System.out.println("카운트"+countRank+rankValue);
             rankCountResult.put(rankValue, countRank);
         }
         return rankCountResult;
