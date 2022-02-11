@@ -4,13 +4,13 @@ public class MoneyValidator {
     private MoneyValidator() {
     }
 
-    public static void checkIsValid(long money) {
+    public static void validateMoney(long money) {
         if (isUnderTicketPrice(money)) {
-            throw new IllegalArgumentException("1000원 보다 큰 금액을 입력해주세요");
+            throw new IllegalArgumentException("1000원 이상의 금액을 입력해주세요");
         }
     }
 
     private static boolean isUnderTicketPrice(long money) {
-        return money <= 1000;
+        return money < 1000;
     }
 }

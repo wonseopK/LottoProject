@@ -9,10 +9,10 @@ public class WinnerNumberHandlerValidator {
 
     public static void validateNumber(String resultNumbers) {
         Arrays.stream(resultNumbers.split(","))
-                .forEach(number -> WinnerNumberHandlerValidator.validateIsNumber(number));
+                .forEach(WinnerNumberHandlerValidator::isNumber);
     }
 
-    private static void validateIsNumber(String number) {
+    private static void isNumber(String number) {
         try {
             Integer.parseInt(number);
         } catch (NumberFormatException e) {

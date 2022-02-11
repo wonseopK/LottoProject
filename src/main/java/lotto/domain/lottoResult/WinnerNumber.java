@@ -9,7 +9,7 @@ public class WinnerNumber {
     private final List<Integer> winnerNumbers;
 
     public WinnerNumber(List<Integer> winnerNumbers, BonusNumber bonusNumber) {
-        WinnerNumberValidator.checkIsValid(winnerNumbers);
+        WinnerNumberValidator.validateWinnerNumbers(winnerNumbers);
         validateBonusNumberNotContainWinnerNumber(winnerNumbers, bonusNumber);
         this.winnerNumbers = winnerNumbers;
         this.bonusNumber = bonusNumber;

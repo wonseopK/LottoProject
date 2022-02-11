@@ -9,44 +9,38 @@ public class WinnerNumberValidator {
     private WinnerNumberValidator() {
     }
 
-    public static void checkIsValid(List<Integer> winnerNumbers) {
+    public static void validateWinnerNumbers(List<Integer> winnerNumbers) {
         // TODO: 2022/02/10
-        boolean isValidSize = checkIsValidSize(winnerNumbers);
-        boolean isDuplicated = checkIsDuplicated(winnerNumbers);
-        boolean checkIsValidRangeNumbers = checkIsValidRangeNumbers(winnerNumbers);
-
-        if (!checkIsValidSize(winnerNumbers)) {
+        if (isNotValidSize(winnerNumbers)) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
         }
-        if (!isDuplicated) {
+        if (isDuplicated(winnerNumbers)) {
             throw new IllegalArgumentException("중복 없이 입력해주세요");
         }
-        if (!checkIsValidRangeNumbers) {
+        if (isNotValidRangeNumbers(winnerNumbers)) {
             throw new IllegalArgumentException("1~45사이의 숫자를 입력해주세요");
         }
 
     }
 
-    private static boolean checkIsValidSize(List<Integer> winnerNumbers) {
-        return winnerNumbers.size() == LOTTO_NUMBER_SIZE;
+    private static boolean isNotValidSize(List<Integer> winnerNumbers) {
+        return winnerNumbers.size() != LOTTO_NUMBER_SIZE;
     }
 
-    private static boolean checkIsDuplicated(List<Integer> winnerNumbers) {
+    private static boolean isDuplicated(List<Integer> winnerNumbers) {
         int distinctedCount = (int) winnerNumbers
                 .stream()
                 .distinct()
                 .count();
-        return distinctedCount == LOTTO_NUMBER_SIZE;
+        return distinctedCount != LOTTO_NUMBER_SIZE;
     }
 
-    private static boolean checkIsValidRangeNumbers(List<Integer> winnerNumbers) {
-        int erroCount = (int) winnerNumbers.stream()
-                .filter(number -> checkIsValidRangeNumber(number))
-                .count();
-        return erroCount < 1;
+    private static boolean isNotValidRangeNumbers(List<Integer> winnerNumbers) {
+        return winnerNumbers.stream()
+                .anyMatch(WinnerNumberValidator::isNotValidRangeNumber);
     }
 
-    private static boolean checkIsValidRangeNumber(int number) {
+    private static boolean isNotValidRangeNumber(int number) {
         return number < 1 || number > 45;
     }
 
