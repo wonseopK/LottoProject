@@ -7,10 +7,10 @@ import java.util.Map;
 public class LottoResult {
     private static final long DEFAULT_VALUE = 0;
 
-    private final Map<String, Long> result;
+    private final Map<Rank, Long> result;
     private final double totalPrizeMoney;
 
-    public LottoResult(Map<String, Long> result, long totalPrizeMoney) {
+    public LottoResult(Map<Rank, Long> result, long totalPrizeMoney) {
         this.result = result;
         this.totalPrizeMoney = totalPrizeMoney;
     }
@@ -22,11 +22,11 @@ public class LottoResult {
                         "5개 일치 (1500000원)- %d개\n" +
                         "5개 일치, 보너스 볼 일치(30000000원) - %d개\n" +
                         "6개 일치 (2000000000원)- %d개",
-                result.getOrDefault("FOURTH", DEFAULT_VALUE),
-                result.getOrDefault("THIRD", DEFAULT_VALUE),
-                result.getOrDefault("SECOND", DEFAULT_VALUE),
-                result.getOrDefault("BONUS", DEFAULT_VALUE),
-                result.getOrDefault("FIRST", DEFAULT_VALUE));
+                result.getOrDefault(Rank.FOURTH, DEFAULT_VALUE),
+                result.getOrDefault(Rank.THIRD, DEFAULT_VALUE),
+                result.getOrDefault(Rank.SECOND, DEFAULT_VALUE),
+                result.getOrDefault(Rank.BONUS, DEFAULT_VALUE),
+                result.getOrDefault(Rank.FIRST, DEFAULT_VALUE));
 
     }
 
@@ -35,7 +35,7 @@ public class LottoResult {
         return String.format("총 수익률은 %.2f입니다.", profit);
     }
 
-    public Map<String, Long> getResult() {
+    public Map<Rank, Long> getResult() {
         return result;
     }
 }

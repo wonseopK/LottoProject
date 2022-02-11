@@ -36,18 +36,18 @@ public class LottoResultFactory {
     }
 
     private static LottoResult createLottoResult(List<Rank> resultRankContainer){
-        Map<String, Long> rankCountResult = groupByRank(resultRankContainer);
+        Map<Rank, Long> rankCountResult = groupByRank(resultRankContainer);
         long totalPrizeMoney = Rank.getTotalPrize(resultRankContainer);
         return new LottoResult(rankCountResult, totalPrizeMoney);
     }
 
-    private static Map<String, Long> groupByRank(List<Rank> result) {
-        Map<String, Long> rankCountResult = new HashMap<>();
+    private static Map<Rank, Long> groupByRank(List<Rank> result) {
+        Map<Rank, Long> rankCountResult = new HashMap<>();
         for (Rank rankValue : Rank.values()) {
             long countRank = result.stream()
                     .filter(rank -> rank == rankValue)
                     .count();
-            rankCountResult.put(rankValue.name(), countRank);
+            rankCountResult.put(rankValue, countRank);
         }
         return rankCountResult;
     }
