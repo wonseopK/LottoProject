@@ -2,26 +2,24 @@ package lotto.domain.lottoResult;
 
 import java.util.List;
 
-public class WinnerPrize {
-    public enum Rank {
-        FIRST(6, 2000000000),
-        SECOND(5, 1500000),
-        BONUS(5, 30000000),
-        THIRD(4, 50000),
-        FOURTH(3, 5000),
-        NOMATCH(0, 0);
+public enum Rank {
+    FIRST(6, 2000000000),
+    SECOND(5, 1500000),
+    BONUS(5, 30000000),
+    THIRD(4, 50000),
+    FOURTH(3, 5000),
+    NOMATCH(0, 0);
 
-        private final int matchNumbers;
-        private final long prize;
+    private final int matchNumbers;
+    private final long prize;
 
-        Rank(int matchNumber, long prize) {
-            this.matchNumbers = matchNumber;
-            this.prize = prize;
-        }
+    Rank(int matchNumber, long prize) {
+        this.matchNumbers = matchNumber;
+        this.prize = prize;
     }
-
+    
     public static Rank valueOf(int matchNum, boolean bonus) {
-        if (matchNum == WinnerPrize.Rank.SECOND.matchNumbers) {
+        if (matchNum == Rank.SECOND.matchNumbers) {
             return validateBonusNumberMatch(bonus);
         }
         for (Rank rank : Rank.values()) {

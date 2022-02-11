@@ -12,12 +12,12 @@ public class LottoResultFactory {
 
 
     public static LottoResult getLottoResult(WinnerNumber winnerNumber, LottoTickets lottoTickets) {
-        List<WinnerPrize.Rank> resultRankContainer = new ArrayList<>();
+        List<Rank> resultRankContainer = new ArrayList<>();
 
         for (LottoTicket lottoTicket : lottoTickets.getLottoTickets()) {
             boolean bonusNumber = isBonusNumber(winnerNumber.getBonusNumber(), lottoTicket);
             int matchCount = countMatchNumber(winnerNumber, lottoTicket);
-            WinnerPrize.Rank rank = WinnerPrize.valueOf(matchCount, bonusNumber);
+            Rank rank = Rank.valueOf(matchCount, bonusNumber);
             resultRankContainer.add(rank);
         }
         return createLottoResult(resultRankContainer);
@@ -35,15 +35,15 @@ public class LottoResultFactory {
         return countMatchNumber;
     }
 
-    private static LottoResult createLottoResult(List<WinnerPrize.Rank> resultRankContainer){
+    private static LottoResult createLottoResult(List<Rank> resultRankContainer){
         Map<String, Long> rankCountResult = groupByRank(resultRankContainer);
-        long totalPrizeMoney = WinnerPrize.getTotalPrize(resultRankContainer);
+        long totalPrizeMoney = Rank.getTotalPrize(resultRankContainer);
         return new LottoResult(rankCountResult, totalPrizeMoney);
     }
 
-    private static Map<String, Long> groupByRank(List<WinnerPrize.Rank> result) {
+    private static Map<String, Long> groupByRank(List<Rank> result) {
         Map<String, Long> rankCountResult = new HashMap<>();
-        for (WinnerPrize.Rank rankValue : WinnerPrize.Rank.values()) {
+        for (Rank rankValue : Rank.values()) {
             long countRank = result.stream()
                     .filter(rank -> rank == rankValue)
                     .count();
