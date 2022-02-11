@@ -18,7 +18,7 @@ public class WinnerNumberHandlerValidator {
 
     private static void validateLength(List<String> winnerNumbers){
         if (winnerNumbers.size() < 6){
-
+            throw new IllegalArgumentException("당첨번호는 6자리 숫자를 입력해주세요");
         }
     }
     private static void isNumber(String number) {
