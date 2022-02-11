@@ -9,6 +9,7 @@ class LottoNumberTest {
     @RepeatedTest(1000)
     void name() {
         Assertions.assertThat(LottoNumber.nextInt(1,45)).isBetween(1,45);
+
     }
 
 }

@@ -21,6 +21,6 @@ public class LottoNumber {
             return startInclusive;
         }
 
-        return 0;
+        return startInclusive + RANDOM.nextInt(endInclusive - startInclusive + 1);
     }
 }
