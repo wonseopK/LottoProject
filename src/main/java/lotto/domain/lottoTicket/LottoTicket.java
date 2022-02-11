@@ -14,19 +14,19 @@ public class LottoTicket {
     }
 
     private void validateSize(List<Integer> lottoNumbers) {
-        boolean isValidNumbers = lottoNumbers.size() == LOTTO_NUMBER_SIZE;
-        if (!isValidNumbers) {
+        boolean isNotValidNumbers = lottoNumbers.size() != LOTTO_NUMBER_SIZE;
+        if (isNotValidNumbers) {
             throw new IllegalArgumentException("로또 번호 길이가 6자리가 아닙니다.");
         }
     }
 
     private void validateDuplicate(List<Integer> lottoNumbers) {
-        int nonDuplicateNumbers = (int) lottoNumbers
+        long nonDuplicateNumbers = lottoNumbers
                 .stream()
                 .distinct()
                 .count();
-        boolean isDuplictednumbers = nonDuplicateNumbers == LOTTO_NUMBER_SIZE;
-        if (!isDuplictednumbers) {
+        boolean isDuplictednumbers = nonDuplicateNumbers != LOTTO_NUMBER_SIZE;
+        if (isDuplictednumbers) {
             throw new IllegalArgumentException("로또 번호는 중복 될수 없습니다.");
         }
     }
