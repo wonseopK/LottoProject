@@ -11,12 +11,14 @@ public class WinnerNumberHandlerValidator {
 
     public static void validateNumber(String resultNumbers) {
         List<String> winnerNumbers = Arrays.stream(resultNumbers.split(",")).collect(Collectors.toList());
+        System.out.println(winnerNumbers.size()+"size");
+        validateLength(winnerNumbers);
         winnerNumbers.forEach(WinnerNumberHandlerValidator::isNumber);
     }
 
     private static void validateLength(List<String> winnerNumbers){
         if (winnerNumbers.size() < 6){
-            throw new IllegalArgumentException("6자리 숫자를 입력해주세요");
+
         }
     }
     private static void isNumber(String number) {

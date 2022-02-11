@@ -22,4 +22,15 @@ class WinnerNumberHandlerValidatorTest {
         Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(case1,bonusNumber))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("숫자만 입력해주세요");
     }
+    @DisplayName("스플릿한 숫자의 길이 검사")
+    @Test
+    void name2() {
+        //given
+        String case1 = "1,2,3,4,5";
+        BonusNumber bonusNumber = new BonusNumber(8);
+
+        //then
+        Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(case1,bonusNumber))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
