@@ -22,7 +22,8 @@ public class OutputView {
     public static void printLottoResult(LottoResult lottoResult, Money spendMoney) {
         System.out.println("당첨 통계\n" +
                 "---------\n" +
-                lottoResult.toString());
-        lottoResult.calculateProfit(spendMoney);
+                lottoResult.toString() + "\n" +
+                lottoResult.calculateProfit(spendMoney));
+
     }
 }
