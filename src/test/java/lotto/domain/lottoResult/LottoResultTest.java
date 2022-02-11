@@ -13,10 +13,11 @@ class LottoResultTest {
     @Test
     void name() {
         //given
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(4, 2);
-        map.put(5, 3);
-        LottoResult lottoResult = new LottoResult(map);
+        Map<String, Long> map = new HashMap<>();
+        map.put("THIRD", 2L);
+        map.put("SECOND", 3L);
+        map.put("BONUS", 1L);
+        LottoResult lottoResult = new LottoResult(map,4000);
 
         //when
         String result = lottoResult.toString();
