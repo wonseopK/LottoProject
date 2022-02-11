@@ -8,14 +8,20 @@ import java.util.stream.Collectors;
 public class LottoTicketFactory {
 
     private static LottoTicket createLottoTicket() {
-        List<Integer> lottoNumbers = new Random()
-                .ints(1, 45)
-                .distinct()
-                .limit(6)
-                .sorted()
-                .boxed()
-                .collect(Collectors.toList());
-
+//        List<Integer> lottoNumbers = new Random()
+//                .ints(1, 45)
+//                .distinct()
+//                .limit(6)
+//                .sorted()
+//                .boxed()
+//                .collect(Collectors.toList());
+//
+//        return new LottoTicket(lottoNumbers);
+        List<Integer> lottoNumbers = new ArrayList<>();
+        for(int i = 0; i<6; i++){
+            int lottoNumber = LottoNumber.nextInt(1, 45);
+            lottoNumbers.add(lottoNumber);
+        }
         return new LottoTicket(lottoNumbers);
     }
 
