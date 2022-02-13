@@ -9,7 +9,7 @@ public class WinnerNumber {
     private final List<LottoNumber> winnerNumbers;
 
     public WinnerNumber(List<LottoNumber> winnerNumbers, BonusNumber bonusNumber) {
-//        validateBonusNumberNotContainWinnerNumber(winnerNumbers, bonusNumber);
+        validateBonusNumberNotContainWinnerNumber(winnerNumbers, bonusNumber);
         this.winnerNumbers = winnerNumbers;
         this.bonusNumber = bonusNumber;
     }
