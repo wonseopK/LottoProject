@@ -1,15 +1,13 @@
 package lotto.domain.lottoTicket;
 
-import lotto.domain.validator.lottoTicket.LottoTicketValidator;
-
 import java.util.List;
 
 public class LottoTicket {
-    private final List<Integer> lottoNumbers;
+    private final List<LottoNumber> lottoNumbers;
 
-    public LottoTicket(List<Integer> lottoNumbers) {
-        LottoTicketValidator.validateSize(lottoNumbers);
-        LottoTicketValidator.validateDuplicate(lottoNumbers);
+    public LottoTicket(List<LottoNumber> lottoNumbers) {
+//        LottoTicketValidator.validateSize(lottoNumbers);
+//        LottoTicketValidator.validateDuplicate(lottoNumbers);
         this.lottoNumbers = lottoNumbers;
     }
 
@@ -18,7 +16,7 @@ public class LottoTicket {
         return "" + lottoNumbers;
     }
 
-    public List<Integer> getLottoNumbers() {
+    public List<LottoNumber> getLottoNumbers() {
         return lottoNumbers;
     }
 }

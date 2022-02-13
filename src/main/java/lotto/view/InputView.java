@@ -3,7 +3,6 @@ package lotto.view;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.lottoTicket.Money;
-import lotto.domain.lottoTicket.TicketGenerateCount;
 import lotto.domain.utils.WinnerNumberHandler;
 
 import java.util.Scanner;

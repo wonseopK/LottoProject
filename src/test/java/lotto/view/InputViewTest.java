@@ -2,8 +2,7 @@ package lotto.view;
 
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoTicket.Money;
-import lotto.domain.lottoTicket.TicketGenerateCount;
-import lotto.domain.utils.WinnerNumberHandler;
+import lotto.domain.lottoTicket.OrderedTicketCount;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ class InputViewTest {
     void createCount() {
         Money inputMoney = Money.create(5000);
 
-        TicketGenerateCount resultCount = TicketGenerateCount.create(inputMoney);
+        OrderedTicketCount resultCount = OrderedTicketCount.create(inputMoney);
 
         Assertions.assertThat(resultCount.getCount()).isEqualTo(5);
     }

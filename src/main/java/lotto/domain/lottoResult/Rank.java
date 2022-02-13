@@ -22,9 +22,14 @@ public enum Rank {
             return validateBonusNumberMatch(bonus);
         }
         for (Rank rank : Rank.values()) {
-            if (rank.matchNumbers == matchNum) {
-                return rank;
-            }
+            return validateMatchNumber(matchNum,rank);
+        }
+        return null;
+    }
+
+    private static Rank validateMatchNumber(int matchNumber, Rank rank){
+        if (rank.matchNumbers == matchNumber) {
+            return rank;
         }
         return null;
     }
