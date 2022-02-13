@@ -20,5 +20,8 @@ public class WebUILottoApplication {
         OutputView.printOrderTickets(lottoTickets);
 
         WinnerNumber winnerNumber = InputView.inputWinnerNumber();
+        LottoResult lottoResult = LottoResultFactory.getLottoResult(winnerNumber, lottoTickets);
+
+        OutputView.printLottoResult(lottoResult, spendMoney);
     }
 }
