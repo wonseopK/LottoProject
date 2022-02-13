@@ -1,5 +1,7 @@
 package lotto.domain.utils;
 
+import lotto.domain.lottoNumber.LottoNumber;
+import lotto.domain.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.validator.utils.WinnerNumberHandlerValidator;
@@ -14,16 +16,16 @@ public class WinnerNumberHandler {
     private WinnerNumberHandler() {
     }
 
-    private static List<Integer> splitResultNumbers(String resultNumbers) {
-        WinnerNumberHandlerValidator.validateNumber(resultNumbers);
-        return Arrays.stream(resultNumbers.split(NUMBER_SPERATOR))
-                .map(number -> Integer.valueOf(number.trim()))
-                .sorted()
+    private static List<LottoNumber> splitResultNumbers(String winnserNumbers) {
+        WinnerNumberHandlerValidator.validateNumber(winnserNumbers);
+        return Arrays.stream(winnserNumbers.split(NUMBER_SPERATOR))
+                .map(number -> LottoNumberBox.getLottoNumber(Integer.parseInt(number.trim())))
                 .collect(Collectors.toList());
     }
 
     public static WinnerNumber winnerNumberSaver(String inputNumbers, BonusNumber bonusNumber) {
-        List<Integer> winnerNumbers = WinnerNumberHandler.splitResultNumbers(inputNumbers);
+        List<LottoNumber> winnerNumbers = WinnerNumberHandler.splitResultNumbers(inputNumbers);
+
         return new WinnerNumber(winnerNumbers, bonusNumber);
     }
 }
