@@ -6,7 +6,7 @@ import lotto.domain.validator.lottoResult.WinnerNumberValidator;
 import java.util.List;
 
 public class WinnerNumber {
-    private BonusNumber bonusNumber;
+    private final BonusNumber bonusNumber;
     private final List<LottoNumber> winnerNumbers;
 
     public WinnerNumber(List<LottoNumber> winnerNumbers, BonusNumber bonusNumber) {

@@ -1,6 +1,8 @@
 package lotto.domain.validator.lottoResult;
 
 
+import lotto.domain.lottoNumber.LottoNumber;
+
 import java.util.List;
 
 public class WinnerNumberValidator {
@@ -9,7 +11,7 @@ public class WinnerNumberValidator {
     private WinnerNumberValidator() {
     }
 
-    public static void validateWinnerNumbers(List<Integer> winnerNumbers) {
+    public static void validateWinnerNumbers(List<LottoNumber> winnerNumbers) {
         // TODO: 2022/02/10
         if (isNotValidSize(winnerNumbers)) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
@@ -23,11 +25,11 @@ public class WinnerNumberValidator {
 
     }
 
-    private static boolean isNotValidSize(List<Integer> winnerNumbers) {
+    private static boolean isNotValidSize(List<LottoNumber> winnerNumbers) {
         return winnerNumbers.size() != LOTTO_NUMBER_SIZE;
     }
 
-    private static boolean isDuplicated(List<Integer> winnerNumbers) {
+    private static boolean isDuplicated(List<LottoNumber> winnerNumbers) {
         int distinctedCount = (int) winnerNumbers
                 .stream()
                 .distinct()
@@ -35,13 +37,13 @@ public class WinnerNumberValidator {
         return distinctedCount != LOTTO_NUMBER_SIZE;
     }
 
-    private static boolean isNotValidRangeNumbers(List<Integer> winnerNumbers) {
+    private static boolean isNotValidRangeNumbers(List<LottoNumber> winnerNumbers) {
         return winnerNumbers.stream()
                 .anyMatch(WinnerNumberValidator::isNotValidRangeNumber);
     }
 
-    private static boolean isNotValidRangeNumber(int number) {
-        return number < 1 || number > 45;
+    private static boolean isNotValidRangeNumber(LottoNumber number) {
+        return false;
     }
 
 }

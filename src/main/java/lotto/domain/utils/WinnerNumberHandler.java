@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class WinnerNumberHandler {
-    private static final String NUMBER_SPERATOR = ",";
+    private static final String NUMBER_SPLITTOR = ",";
 
     private WinnerNumberHandler() {
     }
 
     private static List<LottoNumber> splitResultNumbers(String winnserNumbers) {
         WinnerNumberHandlerValidator.validateNumber(winnserNumbers);
-        return Arrays.stream(winnserNumbers.split(NUMBER_SPERATOR))
+        return Arrays.stream(winnserNumbers.split(NUMBER_SPLITTOR))
                 .map(number -> LottoNumberBox.getLottoNumber(Integer.parseInt(number.trim())))
                 .collect(Collectors.toList());
     }
