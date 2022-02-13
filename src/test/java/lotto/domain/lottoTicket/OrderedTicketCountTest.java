@@ -13,7 +13,7 @@ class OrderedTicketCountTest {
         //given
         Money money = Money.create(123456);
         //when
-        OrderedTicketCount count = OrderedTicketCount.create(money);
+        OrderTicketCount count = OrderTicketCount.create(money);
         OutputView.println("횟수 : " + count.getCount());
 
         //then
