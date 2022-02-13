@@ -1,5 +1,6 @@
 package lotto.domain.validator.lottoResult;
 
+import lotto.domain.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.utils.WinnerNumberHandler;
 import org.assertj.core.api.Assertions;
@@ -16,7 +17,7 @@ class WinnerNumberValidatorTest {
         String winnerNumberCase2 = "1,2,3,3,4,5";
         String winnerNumberCase3 = "1,2,3,4,5,67";
         String winnerNumberCase4 = "1,2,3,4,5,6";
-        BonusNumber bonusNumber = new BonusNumber(9);
+        BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(9));
 
         WinnerNumberHandler.winnerNumberSaver(winnerNumberCase4, bonusNumber);
 

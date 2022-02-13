@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.domain.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoTicket.Money;
 import lotto.domain.lottoTicket.OrderedTicketCount;
@@ -30,7 +31,7 @@ class InputViewTest {
         int input = 1;
 
         //when
-        BonusNumber bonusNumber = new BonusNumber(input);
+        BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(1));
 
         //then
         Assertions.assertThat(bonusNumber.getBonusNumber()).isEqualTo(1);
