@@ -10,6 +10,9 @@ public class LottoNumber {
 
     private void validateLottoNumber (int inputNumber) {
         boolean isNorLottoNumberRange = inputNumber > 45 || inputNumber < 1;
+        if(isNorLottoNumberRange){
+            throw new IllegalArgumentException("로또번호는 1~45자리 숫자여야합니다.");
+        }
     }
 
     @Override

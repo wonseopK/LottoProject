@@ -13,6 +13,8 @@ class LottoNumberTest {
         int inputNumber = 46;
         int inputNumber2 = 0;
 
+        new LottoNumber(1);
+        new LottoNumber(45);
         Assertions.assertThatThrownBy(()->new LottoNumber(inputNumber))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("로또번호는 1~45자리 숫자여야합니다.");
         Assertions.assertThatThrownBy(()->new LottoNumber(inputNumber2))
