@@ -1,9 +1,11 @@
 package lotto.domain.lottoTicket;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LottoTicket {
     private final List<LottoNumber> lottoNumbers;
+
 
     public LottoTicket(List<LottoNumber> lottoNumbers) {
 //        LottoTicketValidator.validateSize(lottoNumbers);
@@ -13,7 +15,7 @@ public class LottoTicket {
 
     @Override
     public String toString() {
-        return "" + lottoNumbers;
+        return "";
     }
 
     public List<LottoNumber> getLottoNumbers() {
