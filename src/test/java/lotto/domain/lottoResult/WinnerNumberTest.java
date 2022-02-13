@@ -16,6 +16,6 @@ class WinnerNumberTest {
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(3));
 
         Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber))
-                .isNotInstanceOf(IllegalArgumentException.class).hasMessage("보너스번호와 당첨번호가 중복됩니다ㅏ.");
+                .isInstanceOf(IllegalArgumentException.class).hasMessage("보너스번호와 당첨번호가 중복됩니다.");
     }
 }

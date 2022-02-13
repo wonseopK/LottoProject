@@ -16,7 +16,7 @@ public class WinnerNumber {
 
     private void validateBonusNumberNotContainWinnerNumber(List<LottoNumber> winnerNumbers, BonusNumber bonusNumber) {
         if (winnerNumbers.contains(bonusNumber.getBonusNumber())) {
-            throw new IllegalArgumentException("당첨번호에 중복되는 숫자입니다.");
+            throw new IllegalArgumentException("보너스번호와 당첨번호가 중복됩니다.");
         }
 
     }
