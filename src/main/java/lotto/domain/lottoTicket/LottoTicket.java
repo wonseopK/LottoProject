@@ -15,7 +15,8 @@ public class LottoTicket {
 
     @Override
     public String toString() {
-        return "";
+        String printLottoTicket = lottoNumbers.stream().map(LottoNumber::toString).collect(Collectors.joining(","));
+        return "[" + printLottoTicket + "]";
     }
 
     public List<LottoNumber> getLottoNumbers() {

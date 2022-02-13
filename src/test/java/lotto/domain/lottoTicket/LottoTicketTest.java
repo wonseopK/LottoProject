@@ -35,9 +35,10 @@ class LottoTicketTest {
                 new LottoNumber(5),
                 new LottoNumber(6)
                 );
+        String expectedResult = "[1,2,3,4,5,6]";
 
         LottoTicket lottoTicket = new LottoTicket(sixRandomLottoNumbers);
 
-        Assertions.assertThat(lottoTicket).isEqualTo("[1,2,3,4,5,6]");
+        Assertions.assertThat(lottoTicket.toString()).isEqualTo(expectedResult);
     }
 }
