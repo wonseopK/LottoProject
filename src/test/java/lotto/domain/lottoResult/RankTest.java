@@ -12,11 +12,11 @@ class RankTest {
     void name() {
         //given
         int matchNumber = 4;
+        int matchNumber2 = 5;
         boolean bonus = true;
 
         //when
         Rank rank = Rank.valueOf(matchNumber, bonus);
-        System.out.println(Rank.valueOf(matchNumber, false));
 
         //then
         Assertions.assertThat(rank).isEqualTo(Rank.THIRD);

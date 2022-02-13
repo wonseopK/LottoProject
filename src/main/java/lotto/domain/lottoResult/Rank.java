@@ -19,22 +19,18 @@ public enum Rank {
     
     public static Rank valueOf(int matchNum, boolean bonus) {
         if (matchNum == Rank.SECOND.matchNumbers) {
-            return validateBonusNumberMatch(bonus);
+            return findBonusNumber(bonus);
         }
         for (Rank rank : Rank.values()) {
-            return validateMatchNumber(matchNum,rank);
+            if (rank.matchNumbers == matchNum) {
+                System.out.println(rank.matchNumbers);
+                return rank;
+            }
         }
         return null;
     }
 
-    private static Rank validateMatchNumber(int matchNumber, Rank rank){
-        if (rank.matchNumbers == matchNumber) {
-            return rank;
-        }
-        return null;
-    }
-
-    private static Rank validateBonusNumberMatch(boolean isMatchBonusNumber) {
+    private static Rank findBonusNumber(boolean isMatchBonusNumber) {
         if (isMatchBonusNumber) {
             return Rank.BONUS;
         }
@@ -42,6 +38,8 @@ public enum Rank {
     }
 
     public static long getTotalPrize(List<Rank> lottoResult) {
-        return lottoResult.stream().mapToLong(rank -> rank.prize).sum();
+
+        return lottoResult.stream()
+                .mapToLong(rank -> rank.prize).sum();
     }
 }
