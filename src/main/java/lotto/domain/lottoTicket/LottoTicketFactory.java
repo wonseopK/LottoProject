@@ -22,4 +22,9 @@ public class LottoTicketFactory {
 //        }
 //        return new LottoTickets(lottoTickets);
 //    }
+      public static LottoTickets giveOrderTickets(int orderTicketCount){
+          List<LottoTicket> lottoTickets = new ArrayList<>();
+
+          return new LottoTickets(lottoTickets);
+      }
 }

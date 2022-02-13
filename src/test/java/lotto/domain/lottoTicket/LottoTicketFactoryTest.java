@@ -21,7 +21,7 @@ class LottoTicketFactoryTest {
 //
 //    }
 
-//    @DisplayName("로또번호 1~45 범위 검사 기능")
+    //    @DisplayName("로또번호 1~45 범위 검사 기능")
 //    @RepeatedTest(30)
 //    void name2() {
 //        LottoTickets lottoTickets = LottoTicketFactory.giveOrderedTicket(1);
@@ -29,4 +29,13 @@ class LottoTicketFactoryTest {
 //            Assertions.assertThat(number).isBetween(1, 45);
 //        }
 //    }
+    @DisplayName("구입한 갯수만큼 로또 티캣을 반환하는지 테스트")
+    @Test
+    void name() {
+        int orderTicketCount = 3;
+
+        LottoTickets lottoTickets = LottoTicketFactory.giveOrderTickets(orderTicketCount);
+
+        Assertions.assertThat(lottoTickets.getLottoTickets().size()).isEqualTo(3);
+    }
 }
