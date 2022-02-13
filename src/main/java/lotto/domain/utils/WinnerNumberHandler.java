@@ -17,7 +17,7 @@ public class WinnerNumberHandler {
     }
 
     private static List<LottoNumber> splitResultNumbers(String winnserNumbers) {
-        WinnerNumberHandlerValidator.validateNumber(winnserNumbers);
+        WinnerNumberHandlerValidator.validateInputWinnerNumbers(winnserNumbers);
         return Arrays.stream(winnserNumbers.split(NUMBER_SPLITTOR))
                 .map(number -> LottoNumberBox.getLottoNumber(Integer.parseInt(number.trim())))
                 .collect(Collectors.toList());

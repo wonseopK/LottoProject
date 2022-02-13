@@ -1,7 +1,6 @@
 package lotto.domain.lottoResult;
 
 import lotto.domain.lottoNumber.LottoNumber;
-import lotto.domain.validator.lottoResult.WinnerNumberValidator;
 
 import java.util.List;
 
@@ -10,7 +9,6 @@ public class WinnerNumber {
     private final List<LottoNumber> winnerNumbers;
 
     public WinnerNumber(List<LottoNumber> winnerNumbers, BonusNumber bonusNumber) {
-//        WinnerNumberValidator.validateWinnerNumbers(winnerNumbers);
 //        validateBonusNumberNotContainWinnerNumber(winnerNumbers, bonusNumber);
         this.winnerNumbers = winnerNumbers;
         this.bonusNumber = bonusNumber;
