@@ -1,16 +1,18 @@
 package lotto.domain.lottoResult;
 
+import lotto.domain.lottoNumber.LottoNumber;
+import lotto.domain.lottoNumber.LottoNumberBox;
 import lotto.domain.validator.lottoResult.BonusNumberValidator;
 
 public class BonusNumber {
-    private int bonusNumber;
+    private LottoNumber bonusNumber;
 
-    public BonusNumber(int bonusNumber) {
-        BonusNumberValidator.validateBonusNumber(bonusNumber);
+    public BonusNumber(LottoNumber bonusNumber) {
+//        BonusNumberValidator.validateBonusNumber(bonusNumber);
         this.bonusNumber = bonusNumber;
     }
 
-    public int getBonusNumber() {
+    public LottoNumber getBonusNumber() {
         return bonusNumber;
     }
 }

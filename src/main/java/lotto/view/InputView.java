@@ -1,5 +1,7 @@
 package lotto.view;
 
+import lotto.domain.lottoNumber.LottoNumber;
+import lotto.domain.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.lottoTicket.Money;
@@ -28,7 +30,8 @@ public class InputView {
 
     private static BonusNumber inputBonusNumber() {
         OutputView.println("보너스 숫자를 입력해주세요");
-        int bonusNumber = InputView.validateIntReader(scanner);
+        int inputNumber = InputView.validateIntReader(scanner);
+        LottoNumber bonusNumber = LottoNumberBox.getLottoNumber(inputNumber);
         return new BonusNumber(bonusNumber);
     }
 
