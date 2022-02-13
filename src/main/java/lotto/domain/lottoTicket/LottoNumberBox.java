@@ -17,7 +17,7 @@ public class LottoNumberBox {
         return box.get(number);
     }
 
-    public static List<LottoNumber> getSixRandomLottoNumber() {
+    public static List<LottoNumber> getSixRandomLottoNumbers() {
         List<LottoNumber> lottoNumbers = new ArrayList<>(box.values());
         Collections.shuffle(lottoNumbers);
         return lottoNumbers.subList(0, 6);

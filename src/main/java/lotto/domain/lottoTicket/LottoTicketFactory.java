@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class LottoTicketFactory {
 
-//    private static LottoTicket createLottoTicket() {
+    //    private static LottoTicket createLottoTicket() {
 //        Set<Integer> lottoNumbers = new HashSet<>();
 //        while(true){
 //            int lottoNumber = LottoNumberBox.nextInt(1, 45);
@@ -22,9 +22,12 @@ public class LottoTicketFactory {
 //        }
 //        return new LottoTickets(lottoTickets);
 //    }
-      public static LottoTickets giveOrderTickets(int orderTicketCount){
-          List<LottoTicket> lottoTickets = new ArrayList<>();
-
-          return new LottoTickets(lottoTickets);
-      }
+    public static LottoTickets giveOrderTickets(int orderTicketCount) {
+        List<LottoTicket> lottoTickets = new ArrayList<>();
+        for (int i = 0; i < orderTicketCount; i++) {
+            LottoTicket lottoTicket = new LottoTicket(LottoNumberBox.getSixRandomLottoNumbers());
+            lottoTickets.add(lottoTicket);
+        }
+        return new LottoTickets(lottoTickets);
+    }
 }
