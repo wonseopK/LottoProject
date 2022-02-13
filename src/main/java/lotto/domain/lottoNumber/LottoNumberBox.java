@@ -1,7 +1,6 @@
-package lotto.domain.lottoTicket;
+package lotto.domain.lottoNumber;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LottoNumberBox {
     private static final Map<Integer, LottoNumber> box;

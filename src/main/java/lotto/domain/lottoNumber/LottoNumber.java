@@ -1,4 +1,4 @@
-package lotto.domain.lottoTicket;
+package lotto.domain.lottoNumber;
 
 public class LottoNumber {
     private int number;

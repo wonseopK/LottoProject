@@ -1,5 +1,7 @@
 package lotto.domain.lottoTicket;
 
+import lotto.domain.lottoNumber.LottoNumberBox;
+
 import java.util.*;
 
 public class LottoTicketFactory {

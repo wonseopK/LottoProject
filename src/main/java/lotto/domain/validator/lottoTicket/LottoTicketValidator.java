@@ -1,9 +1,8 @@
 package lotto.domain.validator.lottoTicket;
 
-import lotto.domain.lottoTicket.LottoNumber;
+import lotto.domain.lottoNumber.LottoNumber;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class LottoTicketValidator {
     public static final int LOTTO_NUMBER_SIZE = 6;
