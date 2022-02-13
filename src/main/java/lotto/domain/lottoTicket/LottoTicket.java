@@ -1,5 +1,7 @@
 package lotto.domain.lottoTicket;
 
+import lotto.domain.validator.lottoTicket.LottoTicketValidator;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -8,8 +10,8 @@ public class LottoTicket {
 
 
     public LottoTicket(List<LottoNumber> lottoNumbers) {
-//        LottoTicketValidator.validateSize(lottoNumbers);
-//        LottoTicketValidator.validateDuplicate(lottoNumbers);
+        LottoTicketValidator.validateSize(lottoNumbers);
+        LottoTicketValidator.validateDuplicate(lottoNumbers);
         this.lottoNumbers = lottoNumbers;
     }
 
