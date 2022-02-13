@@ -39,6 +39,7 @@ class LottoTicketTest {
 
         LottoTicket lottoTicket = new LottoTicket(sixRandomLottoNumbers);
 
+        System.out.println(lottoTicket.toString());
         Assertions.assertThat(lottoTicket.toString()).isEqualTo(expectedResult);
     }
 }
