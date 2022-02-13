@@ -16,6 +16,10 @@ public class LottoNumberBox {
         return box.get(number);
     }
 
+    private static void validateLottoNumber(){
+
+    }
+
     public static List<LottoNumber> getSixRandomLottoNumbers() {
         List<LottoNumber> lottoNumbers = new ArrayList<>(box.values());
         Collections.shuffle(lottoNumbers);
