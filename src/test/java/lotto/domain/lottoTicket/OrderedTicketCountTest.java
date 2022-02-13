@@ -6,14 +6,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-class TicketGenerateCountTest {
+class OrderedTicketCountTest {
     @DisplayName("구매한 금액을 티켓 갯수로 변환해주는 테스트")
     @Test
     void name() {
         //given
         Money money = Money.create(123456);
         //when
-        TicketGenerateCount count = TicketGenerateCount.create(money);
+        OrderedTicketCount count = OrderedTicketCount.create(money);
         OutputView.println("횟수 : " + count.getCount());
 
         //then
