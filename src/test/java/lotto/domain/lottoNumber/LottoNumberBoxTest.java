@@ -15,6 +15,8 @@ class LottoNumberBoxTest {
 
         Assertions.assertThatThrownBy(()->LottoNumberBox.getLottoNumber(input1))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("1~45사이의 숫자만 꺼내올수있습니다.");
+        Assertions.assertThatThrownBy(()->LottoNumberBox.getLottoNumber(input2))
+                .isInstanceOf(IllegalArgumentException.class).hasMessage("1~45사이의 숫자만 꺼내올수있습니다.");
     }
 
 }

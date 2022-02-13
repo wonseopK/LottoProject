@@ -13,11 +13,15 @@ public class LottoNumberBox {
     }
 
     public static LottoNumber getLottoNumber(int number) {
+        validateLottoNumber(number);
         return box.get(number);
     }
 
-    private static void validateLottoNumber(){
-
+    private static void validateLottoNumber(int inputNumber){
+        boolean isNotLottoRange = inputNumber > 45 || inputNumber < 1;
+        if(isNotLottoRange){
+            throw new IllegalArgumentException("1~45사이의 숫자만 꺼내올수있습니다.");
+        }
     }
 
     public static List<LottoNumber> getSixRandomLottoNumbers() {
