@@ -14,7 +14,7 @@ public class TicketOrderType {
     public static TicketOrderType of(int totalTicketCount, int manualTicketCount){
         boolean isNotValidManualNumber = totalTicketCount < manualTicketCount;
         if(isNotValidManualNumber){
-           
+            throw new IllegalArgumentException("총구입 개수 보다 작은 값을 입력해주세요.");
         }
         return new TicketOrderType(totalTicketCount,manualTicketCount);
     }
