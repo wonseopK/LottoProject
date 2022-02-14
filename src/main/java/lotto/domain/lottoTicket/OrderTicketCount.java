@@ -6,20 +6,21 @@ import lotto.view.OutputView;
 public class OrderTicketCount {
     public static final long TICKET_PRICE = 1000;
 
-    private int count;
+    private final long totalTicketCount;
 
     private OrderTicketCount(Money money) {
-        this.count = (int) (money.getMoney() / TICKET_PRICE);
+        this.totalTicketCount = money.getTicketCount();
     }
 
     public static OrderTicketCount create(Money money) {
         OrderTicketCount orderTicketCount = new OrderTicketCount(money);
-        OutputView.println(String.format("%d개를 구매하셨습니다.", orderTicketCount.getCount()));
+        OutputView.println(String.format("%d개를 구매하셨습니다.", money.getTicketCount()));
         OutputView.println(money.changePrint());
         return orderTicketCount;
     }
 
-    public int getCount() {
-        return count;
+    public long getTotalTicketCount() {
+        return totalTicketCount;
     }
+
 }

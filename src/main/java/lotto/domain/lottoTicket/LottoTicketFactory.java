@@ -7,7 +7,7 @@ import java.util.*;
 public class LottoTicketFactory {
     public static LottoTickets giveOrderTickets(OrderTicketCount orderTicketCount) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
-        for (int i = 0; i < orderTicketCount.getCount(); i++) {
+        for (int i = 0; i < orderTicketCount.getTotalTicketCount(); i++) {
             LottoTicket lottoTicket = new LottoTicket(LottoNumberBox.getSixRandomLottoNumbers());
             lottoTickets.add(lottoTicket);
         }

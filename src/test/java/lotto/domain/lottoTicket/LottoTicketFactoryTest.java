@@ -1,10 +1,8 @@
 package lotto.domain.lottoTicket;
 
 import lotto.domain.money.Money;
-import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 class LottoTicketFactoryTest {

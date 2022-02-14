@@ -15,9 +15,9 @@ class OrderedTicketCountTest {
         Money money = Money.create(123456);
         //when
         OrderTicketCount count = OrderTicketCount.create(money);
-        OutputView.println("횟수 : " + count.getCount());
+        OutputView.println("횟수 : " + count.getTotalTicketCount());
 
         //then
-        Assertions.assertThat(count.getCount()).isEqualTo(123);
+        Assertions.assertThat(count.getTotalTicketCount()).isEqualTo(123);
     }
 }

@@ -18,6 +18,10 @@ public class Money {
         return String.format("거스름돈은 %d원 입니다.", money % TICKET_PRICE);
     }
 
+    public long getTicketCount() {
+        return this.money / TICKET_PRICE;
+    }
+
     public long getMoney() {
         return money;
     }
