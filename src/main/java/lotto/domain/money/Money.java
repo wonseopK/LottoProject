@@ -22,7 +22,7 @@ public class Money {
         return this.money / TICKET_PRICE;
     }
     public void useMoneyToBuyOneTicket(){
-        this.money --;
+        this.money -= 1000;
     }
 
     public long getMoney() {
