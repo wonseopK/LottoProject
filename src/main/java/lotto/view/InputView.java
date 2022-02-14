@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
@@ -7,6 +8,7 @@ import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.money.Money;
 import utils.NumberSpliter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,10 +30,15 @@ public class InputView {
         return inputNumber;
     }
 
-    public static List<LottoNumber> getManualTicketNumber(){
+    public static List<LottoTicket> makeManualLottoTickets(int manualTicketOrderCount){
         System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요");
-        String intputNumber = scanner.nextLine();
-        return NumberSpliter.splitNumbers(intputNumber);
+        List<LottoTicket> lottoTickets = new ArrayList<>();
+        for (int i = 0; i < manualTicketOrderCount; i++) {
+            String intputNumber = scanner.nextLine();
+            LottoTicket lottoTicket = new LottoTicket(NumberSpliter.splitNumbers(intputNumber));
+            lottoTickets.add(lottoTicket);
+        }
+        return lottoTickets;
     }
 
     public static WinnerNumber inputWinnerNumber() {
