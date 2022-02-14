@@ -3,7 +3,7 @@ package lotto.domain.money;
 public class Money {
     public static final int TICKET_PRICE = 1000;
 
-    private final long money;
+    private long money;
 
     private Money(final long money) {
         MoneyValidator.validateMoney(money);
@@ -20,6 +20,9 @@ public class Money {
 
     public long getTicketCount() {
         return this.money / TICKET_PRICE;
+    }
+    public void useMoneyToBuyOneTicket(){
+        this.money --;
     }
 
     public long getMoney() {
