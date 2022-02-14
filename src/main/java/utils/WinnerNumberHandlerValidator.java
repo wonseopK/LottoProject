@@ -5,19 +5,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class WinnerNumberHandlerValidator {
+    public static final int LOTTO_NUMBER_SIZE = 6;
+    public static final String NUMBER_SPLITER = ",";
+
     private WinnerNumberHandlerValidator() {
 
     }
 
     public static void validateInputWinnerNumbers(String inputWinnerNumbers) {
-        List<String> winnerNumbers = Arrays.stream(inputWinnerNumbers.split(",")).collect(Collectors.toList());
+        List<String> winnerNumbers = Arrays.stream(inputWinnerNumbers.split(NUMBER_SPLITER)).collect(Collectors.toList());
         validateLength(winnerNumbers);
         validateNotDuplicate(winnerNumbers);
         winnerNumbers.forEach(WinnerNumberHandlerValidator::validateNumber);
     }
 
     private static void validateLength(List<String> winnerNumbers) {
-        if (winnerNumbers.size() < 6) {
+        if (winnerNumbers.size() < LOTTO_NUMBER_SIZE) {
             throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
         }
     }
@@ -27,7 +30,7 @@ public class WinnerNumberHandlerValidator {
                 .stream()
                 .distinct()
                 .count();
-        boolean isDuplicated = distinctedCount != 6;
+        boolean isDuplicated = distinctedCount != LOTTO_NUMBER_SIZE;
         if (isDuplicated) {
             throw new IllegalArgumentException("중복 없이 입력해주세요");
         }

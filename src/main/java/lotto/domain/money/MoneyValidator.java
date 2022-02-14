@@ -1,6 +1,8 @@
 package lotto.domain.money;
 
 public class MoneyValidator {
+    public static final int MIN_INPUT_MONEY = 1000;
+
     private MoneyValidator() {
     }
 
@@ -11,6 +13,6 @@ public class MoneyValidator {
     }
 
     private static boolean isUnderTicketPrice(long money) {
-        return money < 1000;
+        return money < MIN_INPUT_MONEY;
     }
 }
