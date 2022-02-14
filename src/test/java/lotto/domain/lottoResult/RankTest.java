@@ -4,6 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 
 class RankTest {
     @DisplayName("보너스 번호가 없을 경우 출련되는 랭크를 확인하는 테스트")
@@ -37,5 +39,18 @@ class RankTest {
 
         //then
         Assertions.assertThat(rank).isEqualTo(Rank.BONUS);
+    }
+
+    @DisplayName("총 당첨 금액을 계산해주는 기능 테스트")
+    @Test
+    void name3() {
+        ArrayList<Rank> ranks = new ArrayList<>();
+        ranks.add(Rank.BONUS);
+        ranks.add(Rank.SECOND);
+        ranks.add(Rank.EIGHTH);
+
+        long totalPrize = Rank.getTotalPrize(ranks);
+
+        Assertions.assertThat(totalPrize).isEqualTo(31500000);
     }
 }

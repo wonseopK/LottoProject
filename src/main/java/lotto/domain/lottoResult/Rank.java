@@ -7,7 +7,10 @@ public enum Rank {
     SECOND(5, 1500000),
     BONUS(5, 30000000),
     THIRD(4, 50000),
-    FOURTH(3, 5000);
+    FOURTH(3, 5000),
+    SIXTH(2, 0),
+    SEVENTH(1,0),
+    EIGHTH(0, 0);
 
     private final int matchNumbers;
     private final long prize;
@@ -23,7 +26,6 @@ public enum Rank {
         }
         for (Rank rank : Rank.values()) {
             if (rank.matchNumbers == matchNum) {
-                System.out.println(rank.matchNumbers);
                 return rank;
             }
         }
@@ -36,9 +38,8 @@ public enum Rank {
         }
         return Rank.SECOND;
     }
-
+    //lottoResult에 당첨된것들이 하나도 없을 경우 0반환하도록 테스트하기
     public static long getTotalPrize(List<Rank> lottoResult) {
-
         return lottoResult.stream()
                 .mapToLong(rank -> rank.prize).sum();
     }
