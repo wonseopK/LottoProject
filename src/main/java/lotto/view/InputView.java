@@ -1,13 +1,13 @@
 package lotto.view;
 
-import lotto.domain.lottoTicket.OrderTicketCount;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.money.Money;
-import utils.WinnerNumberHandler;
+import utils.NumberSpliter;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
@@ -28,12 +28,18 @@ public class InputView {
         return inputNumber;
     }
 
+    public static List<LottoNumber> getManualTicketNumber(){
+        System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요");
+        String intputNumber = scanner.nextLine();
+        return NumberSpliter.splitNumbers(intputNumber);
+    }
+
     public static WinnerNumber inputWinnerNumber() {
         OutputView.println("지난주 당첨 번호를 ','로 구분하여 입력해주세요");
         String winnerNumbers = scanner.nextLine();
         BonusNumber bonusNumber = inputBonusNumber();
 
-        return WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber);
+        return NumberSpliter.winnerNumberSaver(winnerNumbers, bonusNumber);
     }
 
     private static BonusNumber inputBonusNumber() {

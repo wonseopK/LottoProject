@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WinnerNumberHandlerValidator {
+public class NumberSpliterValidator {
     public static final int LOTTO_NUMBER_SIZE = 6;
     public static final String NUMBER_SPLITER = ",";
 
-    private WinnerNumberHandlerValidator() {
+    private NumberSpliterValidator() {
 
     }
 
@@ -16,7 +16,7 @@ public class WinnerNumberHandlerValidator {
         List<String> winnerNumbers = Arrays.stream(inputWinnerNumbers.split(NUMBER_SPLITER)).collect(Collectors.toList());
         validateLength(winnerNumbers);
         validateNotDuplicate(winnerNumbers);
-        winnerNumbers.forEach(WinnerNumberHandlerValidator::validateNumber);
+        winnerNumbers.forEach(NumberSpliterValidator::validateNumber);
     }
 
     private static void validateLength(List<String> winnerNumbers) {

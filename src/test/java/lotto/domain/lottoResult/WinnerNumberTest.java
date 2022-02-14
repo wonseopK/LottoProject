@@ -1,7 +1,7 @@
 package lotto.domain.lottoResult;
 
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
-import utils.WinnerNumberHandler;
+import utils.NumberSpliter;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ class WinnerNumberTest {
         String winnerNumbers = "1,2,3,4,5,6";
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(3));
 
-        Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber))
+        Assertions.assertThatThrownBy(() -> NumberSpliter.winnerNumberSaver(winnerNumbers, bonusNumber))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("보너스번호와 당첨번호가 중복됩니다.");
     }
 }

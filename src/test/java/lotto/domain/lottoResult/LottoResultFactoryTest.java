@@ -4,7 +4,7 @@ import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
-import utils.WinnerNumberHandler;
+import utils.NumberSpliter;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ class LottoResultFactoryTest {
         //given
         String winnerNumbers = "1,2,3,4,5,6";
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(7));
-        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(winnerNumbers, bonusNumber);
+        WinnerNumber winnerNumber = NumberSpliter.winnerNumberSaver(winnerNumbers, bonusNumber);
 
         List<LottoNumber> lottoNumberss = Arrays.asList(
                 LottoNumberBox.getLottoNumber(1),

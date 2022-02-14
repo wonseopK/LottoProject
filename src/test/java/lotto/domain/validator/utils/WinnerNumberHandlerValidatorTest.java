@@ -2,7 +2,7 @@ package lotto.domain.validator.utils;
 
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
-import utils.WinnerNumberHandler;
+import utils.NumberSpliter;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,10 +17,10 @@ class WinnerNumberHandlerValidatorTest {
         String case3 = "1,2,3,4,5,6";
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(8));
 
-        WinnerNumberHandler.winnerNumberSaver(case3, bonusNumber);
+        NumberSpliter.winnerNumberSaver(case3, bonusNumber);
 
         //then
-        Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(case1, bonusNumber))
+        Assertions.assertThatThrownBy(() -> NumberSpliter.winnerNumberSaver(case1, bonusNumber))
                 .isInstanceOf(IllegalArgumentException.class).hasMessage("숫자만 입력해주세요");
     }
 
@@ -32,7 +32,7 @@ class WinnerNumberHandlerValidatorTest {
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(8));
 
         //then
-        Assertions.assertThatThrownBy(() -> WinnerNumberHandler.winnerNumberSaver(case1, bonusNumber))
+        Assertions.assertThatThrownBy(() -> NumberSpliter.winnerNumberSaver(case1, bonusNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -43,7 +43,7 @@ class WinnerNumberHandlerValidatorTest {
         String input = "1,2,3,4,5,5";
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(8));
 
-        Assertions.assertThatThrownBy(()->WinnerNumberHandler.winnerNumberSaver(input, bonusNumber))
+        Assertions.assertThatThrownBy(()-> NumberSpliter.winnerNumberSaver(input, bonusNumber))
                 .isInstanceOf(IllegalArgumentException.class);
 
 

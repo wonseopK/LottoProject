@@ -7,7 +7,7 @@ import lotto.domain.lottoResult.WinnerNumber;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import utils.WinnerNumberHandler;
+import utils.NumberSpliter;
 
 class WinnerNumberHandlerTest {
     @DisplayName("당첨 번호를 스트링으로 입력받아 분리해서 당첨번호 객체를 만드는 기능 테스트")
@@ -19,7 +19,7 @@ class WinnerNumberHandlerTest {
         BonusNumber bonusNumber = new BonusNumber(inputBonusNum);
 
         //when
-        WinnerNumber winnerNumber = WinnerNumberHandler.winnerNumberSaver(inputNumbers, bonusNumber);
+        WinnerNumber winnerNumber = NumberSpliter.winnerNumberSaver(inputNumbers, bonusNumber);
 
         //then
         Assertions.assertThat(winnerNumber.getWinnerNumbers().get(0)).isEqualTo(LottoNumberBox.getLottoNumber(1));
