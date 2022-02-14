@@ -16,7 +16,7 @@ public class WebUILottoApplication {
         // TODO: 2022/02/08 todo 진행
         Money spendMoney = InputView.inputMoney();
         OrderTicketCount ticketGenerateCount = OrderTicketCount.create(spendMoney);
-        LottoTickets lottoTickets = LottoTicketFactory.giveOrderTickets(ticketGenerateCount.getCount());
+        LottoTickets lottoTickets = LottoTicketFactory.giveOrderTickets(ticketGenerateCount);
         OutputView.printOrderTickets(lottoTickets);
 
         WinnerNumber winnerNumber = InputView.inputWinnerNumber();

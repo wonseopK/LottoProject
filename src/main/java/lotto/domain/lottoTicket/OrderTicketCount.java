@@ -10,12 +10,13 @@ public class OrderTicketCount {
 
     private OrderTicketCount(Money money) {
         this.count = (int) (money.getMoney() / TICKET_PRICE);
-        OutputView.println(String.format("%d개를 구매하셨습니다.", count));
-        OutputView.println(money.changePrint());
     }
 
     public static OrderTicketCount create(Money money) {
-        return new OrderTicketCount(money);
+        OrderTicketCount orderTicketCount = new OrderTicketCount(money);
+        OutputView.println(String.format("%d개를 구매하셨습니다.", orderTicketCount.getCount()));
+        OutputView.println(money.changePrint());
+        return orderTicketCount;
     }
 
     public int getCount() {

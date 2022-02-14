@@ -12,9 +12,9 @@ public class LottoNumber {
         this.number = number;
     }
 
-    private void validateLottoNumber (int inputNumber) {
+    private void validateLottoNumber(int inputNumber) {
         boolean isNorLottoNumberRange = inputNumber > LOTTO_MAX_NUMBER || inputNumber < LOTTO_MIN_NUMBER;
-        if(isNorLottoNumberRange){
+        if (isNorLottoNumberRange) {
             throw new IllegalArgumentException("로또번호는 1~45자리 숫자여야합니다.");
         }
     }

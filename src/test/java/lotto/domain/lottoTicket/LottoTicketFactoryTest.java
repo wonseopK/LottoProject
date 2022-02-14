@@ -1,5 +1,6 @@
 package lotto.domain.lottoTicket;
 
+import lotto.domain.money.Money;
 import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -32,7 +33,8 @@ class LottoTicketFactoryTest {
     @DisplayName("구입한 갯수만큼 로또 티캣을 반환하는지 테스트")
     @Test
     void name() {
-        int orderTicketCount = 3;
+        Money money = Money.create(3000);
+        OrderTicketCount orderTicketCount = OrderTicketCount.create(money);
 
         LottoTickets lottoTickets = LottoTicketFactory.giveOrderTickets(orderTicketCount);
 
