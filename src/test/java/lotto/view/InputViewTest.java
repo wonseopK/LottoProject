@@ -37,12 +37,12 @@ class InputViewTest {
         Assertions.assertThat(bonusNumber.getBonusNumber()).isEqualTo(1);
     }
 
-    @DisplayName("수동 로또번호가 0이상 수인지 검사하는 기능 테스트")
+    @DisplayName("수동 로또번호가 0이ㅌ 수인지 검사하는 기능 테스트")
     @Test
     void positiveTest(){
-        int input2 = -1;
+        int input = -1;
 
-        Assertions.assertThatThrownBy(()->InputView.validatePositiveNumber(input2))
+        Assertions.assertThatThrownBy(()->InputView.validatePositiveNumber(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }
