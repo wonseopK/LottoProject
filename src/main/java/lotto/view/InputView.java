@@ -1,5 +1,6 @@
 package lotto.view;
 
+import lotto.domain.lottoTicket.OrderTicketCount;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
@@ -18,6 +19,13 @@ public class InputView {
     public static Money inputMoney() {
         OutputView.println("구입 금액을 입력해주세요");
         return Money.create(validateIntReader(scanner));
+    }
+
+    public static int getManualTicketCount(){
+        System.out.println("수동으로 구매할 로또의 개수를 입력해주세요.");
+        int inputNumber = validateIntReader(scanner);
+        validatePositiveNumber(inputNumber);
+        return inputNumber;
     }
 
     public static WinnerNumber inputWinnerNumber() {
@@ -43,4 +51,11 @@ public class InputView {
             throw new IllegalArgumentException("숫자를 입력해주세요");
         }
     }
+    public static void validatePositiveNumber(int inputNumber){
+        if(inputNumber < 0){
+            throw new IllegalArgumentException("0보다 큰 정수를 입력해주세요");
+        }
+    }
+
+
 }

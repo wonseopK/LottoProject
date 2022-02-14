@@ -21,7 +21,7 @@ class InputViewTest {
 
         OrderTicketCount resultCount = OrderTicketCount.create(inputMoney);
 
-        Assertions.assertThat(resultCount.getCount()).isEqualTo(5);
+        Assertions.assertThat(resultCount.getTotalTicketCount()).isEqualTo(5);
     }
 
     @DisplayName("보너스 볼 생성 테스트")
@@ -35,5 +35,14 @@ class InputViewTest {
 
         //then
         Assertions.assertThat(bonusNumber.getBonusNumber()).isEqualTo(1);
+    }
+
+    @DisplayName("수동 로또번호가 0이상 수인지 검사하는 기능 테스트")
+    @Test
+    void positiveTest(){
+        int input2 = -1;
+
+        Assertions.assertThatThrownBy(()->InputView.validatePositiveNumber(input2))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
