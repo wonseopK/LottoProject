@@ -3,7 +3,7 @@ package lotto.view;
 import lotto.domain.lottoResult.LottoResult;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
-import lotto.domain.lottoTicket.Money;
+import lotto.domain.money.Money;
 
 public class OutputView {
     private OutputView() {

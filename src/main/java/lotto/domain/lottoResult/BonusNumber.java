@@ -1,6 +1,6 @@
 package lotto.domain.lottoResult;
 
-import lotto.domain.lottoNumber.LottoNumber;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 
 public class BonusNumber {
     private LottoNumber bonusNumber;

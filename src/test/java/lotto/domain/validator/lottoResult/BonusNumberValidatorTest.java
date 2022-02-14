@@ -1,6 +1,6 @@
 package lotto.domain.validator.lottoResult;
 
-import lotto.domain.lottoNumber.LottoNumberBox;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

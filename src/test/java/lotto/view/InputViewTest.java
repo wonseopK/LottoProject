@@ -1,8 +1,8 @@
 package lotto.view;
 
-import lotto.domain.lottoNumber.LottoNumberBox;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
-import lotto.domain.lottoTicket.Money;
+import lotto.domain.money.Money;
 import lotto.domain.lottoTicket.OrderTicketCount;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

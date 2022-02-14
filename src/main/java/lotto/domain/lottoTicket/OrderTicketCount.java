@@ -1,5 +1,6 @@
 package lotto.domain.lottoTicket;
 
+import lotto.domain.money.Money;
 import lotto.view.OutputView;
 
 public class OrderTicketCount {

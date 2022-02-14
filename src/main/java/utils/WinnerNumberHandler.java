@@ -1,10 +1,9 @@
-package lotto.domain.utils;
+package utils;
 
-import lotto.domain.lottoNumber.LottoNumber;
-import lotto.domain.lottoNumber.LottoNumberBox;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
-import lotto.domain.validator.utils.WinnerNumberHandlerValidator;
 
 import java.util.Arrays;
 import java.util.List;

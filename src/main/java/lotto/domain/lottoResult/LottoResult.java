@@ -1,6 +1,6 @@
 package lotto.domain.lottoResult;
 
-import lotto.domain.lottoTicket.Money;
+import lotto.domain.money.Money;
 
 import java.util.Map;
 

@@ -1,11 +1,11 @@
 package lotto.view;
 
-import lotto.domain.lottoNumber.LottoNumber;
-import lotto.domain.lottoNumber.LottoNumberBox;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
+import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
 import lotto.domain.lottoResult.WinnerNumber;
-import lotto.domain.lottoTicket.Money;
-import lotto.domain.utils.WinnerNumberHandler;
+import lotto.domain.money.Money;
+import utils.WinnerNumberHandler;
 
 import java.util.Scanner;
 

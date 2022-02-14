@@ -1,4 +1,4 @@
-package lotto.domain.validator.lottoTicket;
+package lotto.domain.money;
 
 public class MoneyValidator {
     private MoneyValidator() {
