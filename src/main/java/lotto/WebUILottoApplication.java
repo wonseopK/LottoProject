@@ -11,7 +11,8 @@ public class WebUILottoApplication {
     public static void main(String[] args) {
         // TODO: 2022/02/08 todo 진행
         Money spendMoney = InputView.inputMoney();
-        int manualTicketCount = InputView.getManualTicketCount(spendMoney);
+        //int manualTicketCount = InputView.getManualTicketCount(spendMoney);
+        int manualTicketCount = 0;
 
         LottoController lottoController = new LottoController(spendMoney, manualTicketCount);
         lottoController.run();

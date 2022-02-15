@@ -6,6 +6,7 @@ import lotto.domain.lottoTicket.LottoTickets;
 import lotto.domain.money.Money;
 
 public class OutputView {
+
     private OutputView() {
     }
 
@@ -13,8 +14,12 @@ public class OutputView {
         System.out.println(msg);
     }
 
-    public static void printOrderType(Money money, int manualOrderCount){
-        System.out.println(String.format("수동으로 %d개, 자동으로 %d개를 구매했습니다.",manualOrderCount, money.getTicketCount()));
+    public static void printAutoOrderCount(Money money) {
+        System.out.println(String.format("%d개를 구매했습니다.", money.getTicketCount()));
+    }
+
+    public static void printManulAndAutoOrderCount(Money money, int manualTicketCount) {
+        System.out.println(String.format("수동%d개 자동%d개를 구매했습니다.", manualTicketCount, money.getTicketCount()));
     }
 
     public static void printOrderTickets(LottoTickets lottoTickets) {

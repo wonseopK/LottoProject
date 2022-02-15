@@ -15,7 +15,7 @@ class RandomLottoMachineTest {
     void name() {
         Money money = Money.create(3000);
 
-        List<LottoTicket> lottoTickets1 = new RandomLottoMachine().buyTickets(money);
+        List<LottoTicket> lottoTickets1 = new RandomLottoMachine(money).buyTickets();
 
         LottoTickets lottoTickets = new LottoTickets(lottoTickets1);
 

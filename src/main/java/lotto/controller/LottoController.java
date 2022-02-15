@@ -34,17 +34,21 @@ public class LottoController {
 
     private LottoTickets makeTickets() {
         LottoTickets lottoTickets = useMachinesToMakeTickets();
-        OutputView.printOrderType(spendMoney, manualTicketCount);
+        OutputView.printAutoOrderCount(spendMoney);
         OutputView.printOrderTickets(lottoTickets);
         return lottoTickets;
     }
 
     private LottoTickets useMachinesToMakeTickets(){
-        LottoMachine manualMachine = new ManualLottoMahcine(manualTicketCount);
-        LottoMachine randomMahcine = new RandomLottoMachine();
 
-        List<LottoTicket> manualLottoTickets = manualMachine.buyTickets(spendMoney);
-        List<LottoTicket> autoLottoTickets = randomMahcine.buyTickets(spendMoney);
+
+        LottoMachine manualMachine = new ManualLottoMahcine(manualTicketCount, spendMoney);
+        LottoMachine randomMahcine = new RandomLottoMachine(spendMoney);
+
+
+        List<LottoTicket> manualLottoTickets = manualMachine.buyTickets();
+        List<LottoTicket> autoLottoTickets = randomMahcine.buyTickets();
+
 
         List<LottoTicket> joinLottoTickets = LottoTickets.lottoTicketsJoiner(manualLottoTickets, autoLottoTickets);
         return new LottoTickets(joinLottoTickets);
