@@ -23,17 +23,20 @@ public class InputView {
         return Money.create(validateIntReader(scanner));
     }
 
-    public static int getManualTicketCount(){
+    public static int getManualTicketCount(Money money){
         System.out.println("수동으로 구매할 로또의 개수를 입력해주세요.");
         int inputNumber = validateIntReader(scanner);
+        boolean isOverCount = inputNumber > money.getTicketCount();
+        if (isOverCount){
+            throw new IllegalArgumentException("구입한 개수 이하의 숫자를 입력해주세요");
+        }
         validatePositiveNumber(inputNumber);
         return inputNumber;
     }
 
-    public static List<LottoTicket> makeManualLottoTickets(int manualTicketOrderCount){
-        System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요");
+    public static List<LottoTicket> makeManualLottoTicket(long count){
         List<LottoTicket> lottoTickets = new ArrayList<>();
-        for (int i = 0; i < manualTicketOrderCount; i++) {
+        for (long i = 0; i <count; i++) {
             String intputNumber = scanner.nextLine();
             LottoTicket lottoTicket = new LottoTicket(NumberSpliter.splitNumbers(intputNumber));
             lottoTickets.add(lottoTicket);

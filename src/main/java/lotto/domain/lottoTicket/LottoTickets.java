@@ -12,4 +12,8 @@ public class LottoTickets {
     public List<LottoTicket> getLottoTickets() {
         return lottoTickets;
     }
+
+    public static List<LottoTicket> lottoTicketsJoiner(List<LottoTicket> tickets1, List<LottoTicket> tickets2){
+        return null;
+    }
 }

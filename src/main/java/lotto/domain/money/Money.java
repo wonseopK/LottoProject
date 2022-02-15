@@ -21,8 +21,8 @@ public class Money {
     public long getTicketCount() {
         return this.money / TICKET_PRICE;
     }
-    public void useMoneyToBuyOneTicket(){
-        this.money -= 1000;
+    public void useMoneyToBuyOneTicket(long manualOrderCount){
+        this.money -= 1000 * manualOrderCount;
     }
 
     public long getMoney() {

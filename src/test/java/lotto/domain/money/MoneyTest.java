@@ -12,9 +12,7 @@ class MoneyTest {
     void name() {
         Money money = Money.create(3000);
 
-        money.useMoneyToBuyOneTicket();
-        money.useMoneyToBuyOneTicket();
-        money.useMoneyToBuyOneTicket();
+        money.useMoneyToBuyOneTicket(3);
 
         Assertions.assertThat(money.getMoney()).isEqualTo(0);
 

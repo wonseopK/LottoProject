@@ -13,6 +13,10 @@ public class OutputView {
         System.out.println(msg);
     }
 
+    public static void printOrderType(Money money, int manualOrderCount){
+        System.out.println(String.format("수동으로 %d개, 자동으로 %d개를 구매했습니다.",manualOrderCount, money.getTicketCount()));
+    }
+
     public static void printOrderTickets(LottoTickets lottoTickets) {
         for (LottoTicket lottoTicket : lottoTickets.getLottoTickets()) {
             OutputView.println(lottoTicket.toString());
@@ -25,5 +29,9 @@ public class OutputView {
                 lottoResult.toString() + "\n" +
                 lottoResult.calculateProfit(spendMoney));
 
+    }
+
+    public static void printAskManualLottoNumbers() {
+        System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요.");
     }
 }

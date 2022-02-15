@@ -35,8 +35,8 @@ class RandomMachineTest {
     @Test
     void name() {
         Money money = Money.create(3000);
-        OrderTicketCount orderTicketCount = OrderTicketCount.create(money);
-        List<LottoTicket> lottoTickets1 = RandomLottoMachine.buyTicket(orderTicketCount);
+
+        List<LottoTicket> lottoTickets1 = new RandomLottoMachine().buyTickets(money);
 
         LottoTickets lottoTickets = new LottoTickets(lottoTickets1);
 
