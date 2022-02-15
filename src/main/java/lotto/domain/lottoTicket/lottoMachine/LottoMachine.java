@@ -6,5 +6,5 @@ import lotto.domain.money.Money;
 import java.util.List;
 
 public interface LottoMachine {
-    List<LottoTicket> buyTickets(Money money);
+    List<LottoTicket> buyTickets();
 }
