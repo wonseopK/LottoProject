@@ -27,7 +27,6 @@ public class LottoResult {
                 result.getOrDefault(Rank.SECOND, DEFAULT_VALUE),
                 result.getOrDefault(Rank.BONUS, DEFAULT_VALUE),
                 result.getOrDefault(Rank.FIRST, DEFAULT_VALUE));
-
     }
 
     public String calculateProfit(Money money) {

@@ -10,9 +10,11 @@ class MoneyTest {
     @DisplayName("티켓을 3번 구입하면 구입한 만큼 금액이 주는지 확인하는 테스트")
     @Test
     void name() {
-        Money money = Money.create(3000);
+        int inputMoney = 3000;
 
-        money.useMoneyToBuyOneTicket(3);
+        Money money = Money.create(inputMoney);
+
+        money.useMoneyToBuyOneTicket(inputMoney / Money.TICKET_PRICE);
 
         Assertions.assertThat(money.getMoney()).isEqualTo(0);
 

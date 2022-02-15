@@ -13,6 +13,7 @@ class MoneyValidatorTest {
         long inputMoney = 999;
 
         Assertions.assertThatThrownBy(()->MoneyValidator.validateMoney(inputMoney))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(MoneyValidator.NOT_ENOUGH_PRICE);
     }
 }

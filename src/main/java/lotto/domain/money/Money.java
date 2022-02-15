@@ -25,7 +25,7 @@ public class Money {
     }
 
     public void useMoneyToBuyOneTicket(long manualOrderCount) {
-        this.money -= 1000 * manualOrderCount;
+        this.money -= TICKET_PRICE * manualOrderCount;
     }
 
     public long getMoney() {

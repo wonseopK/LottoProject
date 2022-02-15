@@ -16,9 +16,10 @@ class InputViewTest {
     @DisplayName("금액 입력후 구입 횟수로 변환해주는 테스트")
     @Test
     void createCount() {
-        Money inputMoney = Money.create(5000);
+        int inputMoney = 5000;
+        Money money = Money.create(inputMoney);
 
-        Assertions.assertThat(inputMoney.getTicketCount()).isEqualTo(5);
+        Assertions.assertThat(money.getTicketCount()).isEqualTo(inputMoney / Money.TICKET_PRICE);
     }
 
     @DisplayName("보너스 볼 생성 테스트")
@@ -40,6 +41,7 @@ class InputViewTest {
         int input = -1;
 
         Assertions.assertThatThrownBy(()->InputView.validatePositiveNumber(input))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(InputView.UNDER_NUMBER_ONE);
     }
 }

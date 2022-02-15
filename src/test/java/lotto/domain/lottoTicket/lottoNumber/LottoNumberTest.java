@@ -15,9 +15,9 @@ class LottoNumberTest {
         new LottoNumber(1);
         new LottoNumber(45);
         Assertions.assertThatThrownBy(()->new LottoNumber(inputNumber))
-                .isInstanceOf(IllegalArgumentException.class).hasMessage("로또번호는 1~45자리 숫자여야합니다.");
+                .isInstanceOf(IllegalArgumentException.class).hasMessage(LottoNumber.LOTTO_NUMBER_RANGE);
         Assertions.assertThatThrownBy(()->new LottoNumber(inputNumber2))
-                .isInstanceOf(IllegalArgumentException.class).hasMessage("로또번호는 1~45자리 숫자여야합니다.");
+                .isInstanceOf(IllegalArgumentException.class).hasMessage(LottoNumber.LOTTO_NUMBER_RANGE);
     }
 
 }

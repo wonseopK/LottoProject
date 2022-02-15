@@ -51,6 +51,6 @@ class RankTest {
 
         long totalPrize = Rank.getTotalPrize(ranks);
 
-        Assertions.assertThat(totalPrize).isEqualTo(31500000);
+        Assertions.assertThat(totalPrize).isEqualTo(Rank.BONUS.getPrize() + Rank.SECOND.getPrize());
     }
 }

@@ -1,7 +1,10 @@
 package utils;
 
+import com.sun.corba.se.spi.orbutil.fsm.Input;
+import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
+import lotto.view.InputView;
 import utils.NumberSpliter;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -21,7 +24,7 @@ class NumberSpliterValidatorTest {
 
         //then
         Assertions.assertThatThrownBy(() -> NumberSpliter.winnerNumberSaver(case1, bonusNumber))
-                .isInstanceOf(IllegalArgumentException.class).hasMessage("숫자만 입력해주세요");
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("스플릿한 숫자의 길이 검사")
@@ -33,7 +36,8 @@ class NumberSpliterValidatorTest {
 
         //then
         Assertions.assertThatThrownBy(() -> NumberSpliter.winnerNumberSaver(case1, bonusNumber))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(NumberSpliterValidator.NOT_ENOUGH_LOTTO_SIZE);
     }
 
     @DisplayName("스플릿한 숫자의 중복 검사")
@@ -44,8 +48,7 @@ class NumberSpliterValidatorTest {
         BonusNumber bonusNumber = new BonusNumber(LottoNumberBox.getLottoNumber(8));
 
         Assertions.assertThatThrownBy(()-> NumberSpliter.winnerNumberSaver(input, bonusNumber))
-                .isInstanceOf(IllegalArgumentException.class);
-
-
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage(NumberSpliterValidator.DUPLICATED_NUMBER);
     }
 }

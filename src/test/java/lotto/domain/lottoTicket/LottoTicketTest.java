@@ -25,7 +25,7 @@ class LottoTicketTest {
 
         Assertions.assertThatThrownBy(() -> new LottoTicket(duplicatedLottoNumbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("로또 번호는 중복 될수 없습니다.");
+                .hasMessage(LottoTicketValidator.DUPLICATE_NUMBERS);
 
 
     }
@@ -42,7 +42,7 @@ class LottoTicketTest {
 
         Assertions.assertThatThrownBy(() -> new LottoTicket(notEnoughSizeNumbers))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("로또 번호 길이가 6자리가 아닙니다.");
+                .hasMessage(LottoTicketValidator.OVER_NUMBER_SIZE);
     }
 
 

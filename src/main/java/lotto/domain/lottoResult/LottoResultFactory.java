@@ -45,7 +45,9 @@ public class LottoResultFactory {
 
     private static LottoResult createLottoResult(List<Rank> resultRankContainer) {
         Map<Rank, Long> rankCountResult = groupByRank(resultRankContainer);
-        long totalPrizeMoney = Rank.getTotalPrize(resultRankContainer);
+        long totalPrizeMoney = resultRankContainer.stream()
+                .mapToLong(Rank::getPrize)
+                .sum();
         return new LottoResult(rankCountResult, totalPrizeMoney);
     }
 

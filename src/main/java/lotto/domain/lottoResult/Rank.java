@@ -15,8 +15,8 @@ public enum Rank {
     private final int matchNumbers;
     private final long prize;
 
-    Rank(int matchNumber, long prize) {
-        this.matchNumbers = matchNumber;
+    Rank(int matchNumbers, long prize) {
+        this.matchNumbers = matchNumbers;
         this.prize = prize;
     }
 
@@ -42,5 +42,13 @@ public enum Rank {
     public static long getTotalPrize(List<Rank> lottoResult) {
         return lottoResult.stream()
                 .mapToLong(rank -> rank.prize).sum();
+    }
+
+    public int getMatchNumbers() {
+        return matchNumbers;
+    }
+
+    public long getPrize() {
+        return prize;
     }
 }
