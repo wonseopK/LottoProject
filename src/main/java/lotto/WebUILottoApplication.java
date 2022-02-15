@@ -15,6 +15,5 @@ public class WebUILottoApplication {
 
         LottoController lottoController = new LottoController(spendMoney, manualTicketCount);
         lottoController.run();
-
     }
 }

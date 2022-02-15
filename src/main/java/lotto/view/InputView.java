@@ -19,7 +19,7 @@ public class InputView {
     }
 
     public static Money inputMoney() {
-        OutputView.println("구입 금액을 입력해주세요");
+        System.out.println("구입 금액을 입력해주세요");
         return Money.create(validateIntReader(scanner));
     }
 
@@ -35,6 +35,7 @@ public class InputView {
     }
 
     public static List<LottoTicket> makeManualLottoTicket(long count){
+        System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요.");
         List<LottoTicket> lottoTickets = new ArrayList<>();
         for (long i = 0; i <count; i++) {
             String intputNumber = scanner.nextLine();
@@ -45,7 +46,7 @@ public class InputView {
     }
 
     public static WinnerNumber inputWinnerNumber() {
-        OutputView.println("지난주 당첨 번호를 ','로 구분하여 입력해주세요");
+        System.out.println("지난주 당첨 번호를 ','로 구분하여 입력해주세요");
         String winnerNumbers = scanner.nextLine();
         BonusNumber bonusNumber = inputBonusNumber();
 
@@ -53,7 +54,7 @@ public class InputView {
     }
 
     private static BonusNumber inputBonusNumber() {
-        OutputView.println("보너스 숫자를 입력해주세요");
+        System.out.println("보너스 숫자를 입력해주세요");
         int inputNumber = InputView.validateIntReader(scanner);
         LottoNumber bonusNumber = LottoNumberBox.getLottoNumber(inputNumber);
         return new BonusNumber(bonusNumber);

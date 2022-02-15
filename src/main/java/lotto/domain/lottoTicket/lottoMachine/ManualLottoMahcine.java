@@ -19,7 +19,7 @@ public class ManualLottoMahcine implements LottoMachine {
     @Override
     public List<LottoTicket> buyTickets(Money money) {
         money.useMoneyToBuyOneTicket(count);
-            printAskManualLottoNumbers();
+        printAskManualLottoNumbers();
         return InputView.makeManualLottoTicket(count);
     }
 
