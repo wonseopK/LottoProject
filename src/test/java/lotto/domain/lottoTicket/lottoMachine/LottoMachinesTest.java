@@ -32,6 +32,7 @@ class LottoMachinesTest {
         List<LottoMachine> lottoMachineContainer = new ArrayList<>();
 
         Assertions.assertThatThrownBy(()->new LottoMachines(lottoMachineContainer))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("사용할 로또머신을 추가해주세요");
     }
 }

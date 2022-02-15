@@ -10,6 +10,7 @@ public class LottoMachines {
     private final List<LottoMachine> lottoMachines;
 
     public LottoMachines(List<LottoMachine> lottoMachines) {
+        validateNotEmptyMachine(lottoMachines);
         this.lottoMachines = lottoMachines;
     }
 
@@ -22,7 +23,7 @@ public class LottoMachines {
         return lottoTickets;
     }
 
-    private void validateNotEmptyMachine() {
+    private void validateNotEmptyMachine(List<LottoMachine> lottoMachines) {
         if (lottoMachines.size() == 0){
             throw new IllegalArgumentException("사용할 로또머신을 추가해주세요");
         }
