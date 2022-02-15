@@ -2,6 +2,7 @@ package lotto.domain.lottoTicket;
 
 import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
+import lotto.view.OutputView;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -43,6 +44,8 @@ class LottoTicketsTest {
         lottoTickets2.add(lottoTicket2);
 
         List<LottoTicket> joinedLottoTickets = LottoTickets.lottoTicketsJoiner(lottoTickets1, lottoTickets2);
+        LottoTickets lottoTickets = new LottoTickets(joinedLottoTickets);
+        OutputView.printOrderTickets(lottoTickets);
 
         Assertions.assertThat(joinedLottoTickets.size()).isEqualTo(2);
     }
