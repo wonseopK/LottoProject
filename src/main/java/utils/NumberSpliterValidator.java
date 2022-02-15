@@ -21,7 +21,7 @@ public class NumberSpliterValidator {
 
     private static void validateLength(List<String> winnerNumbers) {
         if (winnerNumbers.size() < LOTTO_NUMBER_SIZE) {
-            throw new IllegalArgumentException("6개의 당첨 번호를 입력해주세요");
+            throw new IllegalArgumentException("6개의 번호를 입력해주세요");
         }
     }
 
