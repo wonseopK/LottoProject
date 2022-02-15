@@ -44,7 +44,7 @@ class LottoTicketsTest {
 
         List<LottoTicket> joinedLottoTickets = LottoTickets.lottoTicketsJoiner(lottoTickets1, lottoTickets2);
 
-        Assertions.assertThat(joinedLottoTickets.size()).isEqualTo(12);
+        Assertions.assertThat(joinedLottoTickets.size()).isEqualTo(2);
     }
 
 
