@@ -9,6 +9,9 @@ public class OutputView {
 
     private OutputView() {
     }
+    public static void printChange(Money money){
+        System.out.println(String.format("거스름돈은 %s", money.changePrint()));
+    }
 
     public static void printAutoOrderCount(Money money) {
         System.out.println(String.format("%d개를 구매했습니다.", money.getTicketCount()));

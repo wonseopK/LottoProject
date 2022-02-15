@@ -30,7 +30,9 @@ public class InputView {
 
     public static Money inputMoney() {
         System.out.println(INPUT_MONEY);
-        return Money.create(validateIntReader(scanner));
+        Money money = Money.create(validateIntReader(scanner));
+        OutputView.printChange(money);
+        return money;
     }
 
     public static int getManualTicketCount(Money money) {
