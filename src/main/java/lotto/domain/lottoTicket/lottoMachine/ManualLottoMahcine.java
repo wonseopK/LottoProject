@@ -20,8 +20,8 @@ public class ManualLottoMahcine implements LottoMachine {
     public List<LottoTicket> buyTickets(Money money) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         money.useMoneyToBuyOneTicket(count);
-        printAskManualLottoNumbers();
         if(count != 0){
+            printAskManualLottoNumbers();
             InputView.makeManualLottoTicket(count);
         }
         return lottoTickets;
