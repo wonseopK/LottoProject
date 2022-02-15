@@ -10,6 +10,8 @@ import java.util.List;
 
 
 public class ManualLottoMahcine implements LottoMachine {
+    public static final int MIN_COUNT = 1;
+
     private long count;
 
     public void getManualCount(int inputManualCount) {
@@ -20,7 +22,7 @@ public class ManualLottoMahcine implements LottoMachine {
     public List<LottoTicket> buyTickets(Money money) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         getManualCount(InputView.getManualTicketCount(money));
-        if (count > 0) {
+        if (count >= MIN_COUNT) {
             money.useMoneyToBuyOneTicket(count);
             lottoTickets = InputView.inputManualLottoTicket(count);
         }

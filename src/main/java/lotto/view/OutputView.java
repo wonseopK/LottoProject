@@ -31,8 +31,4 @@ public class OutputView {
                 lottoResult.calculateProfit(spendMoney));
 
     }
-
-    public static void printAskManualLottoNumbers() {
-        System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요.");
-    }
 }

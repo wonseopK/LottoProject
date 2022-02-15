@@ -6,6 +6,7 @@ public class LottoNumberBox {
     public static final int LOTTO_MIN_NUMBER = 1;
     public static final int LOTTO_MAX_NUMBER = 45;
     public static final int LOTTO_NUMBER_SIZE = 6;
+    public static final String LOTTO_NUMBER_RANGE = String.format("%d~%d사이의 숫자만 꺼내올수있습니다.", LOTTO_MIN_NUMBER, LOTTO_MAX_NUMBER);
 
     private static final Map<Integer, LottoNumber> box;
 
@@ -24,7 +25,7 @@ public class LottoNumberBox {
     private static void validateLottoNumber(int inputNumber) {
         boolean isNotLottoRange = inputNumber > LOTTO_MAX_NUMBER || inputNumber < LOTTO_MIN_NUMBER;
         if (isNotLottoRange) {
-            throw new IllegalArgumentException("1~45사이의 숫자만 꺼내올수있습니다.");
+            throw new IllegalArgumentException(LOTTO_NUMBER_RANGE);
         }
     }
 
