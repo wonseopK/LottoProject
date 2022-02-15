@@ -3,23 +3,25 @@ package lotto.domain.lottoTicket.lottoMachine;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.money.Money;
 import lotto.view.InputView;
+import lotto.view.OutputView;
 
 import java.util.List;
 
 
 public class ManualLottoMahcine implements LottoMachine {
-    private final long count;
-    private final Money spendMoney;
+    private long count;
 
-    public ManualLottoMahcine(long count, Money money) {
-        this.count = count;
-        this.spendMoney = money;
+    public void getManualCount(int inputManualCount) {
+        this.count = inputManualCount;
     }
 
     @Override
-    public List<LottoTicket> buyTickets() {
-        spendMoney.useMoneyToBuyOneTicket(count);
-        return InputView.makeManualLottoTicket(count);
+    public List<LottoTicket> buyTickets(Money money) {
+        getManualCount(InputView.getManualTicketCount(money));
+        money.useMoneyToBuyOneTicket(count);
+        List<LottoTicket> lottoTickets = InputView.inputManualLottoTicket(count);
+        OutputView.printManulAndAutoOrderCount(money, count);
+        return lottoTickets;
     }
 
 }
