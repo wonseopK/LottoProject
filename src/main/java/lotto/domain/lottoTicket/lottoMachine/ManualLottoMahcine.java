@@ -18,13 +18,9 @@ public class ManualLottoMahcine implements LottoMachine {
 
     @Override
     public List<LottoTicket> buyTickets(Money money) {
-        List<LottoTicket> lottoTickets = new ArrayList<>();
         money.useMoneyToBuyOneTicket(count);
-        if(count != 0){
             printAskManualLottoNumbers();
-            InputView.makeManualLottoTicket(count);
-        }
-        return lottoTickets;
+        return InputView.makeManualLottoTicket(count);
     }
 
 }

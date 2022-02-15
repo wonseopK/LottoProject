@@ -33,13 +33,13 @@ public class LottoController {
     }
 
     private LottoTickets makeTickets() {
-        LottoTickets lottoTickets = useMachinesToMakeTickets(manualTicketCount, spendMoney);
+        LottoTickets lottoTickets = useMachinesToMakeTickets();
         OutputView.printOrderType(spendMoney, manualTicketCount);
         OutputView.printOrderTickets(lottoTickets);
         return lottoTickets;
     }
 
-    private LottoTickets useMachinesToMakeTickets(int manualTicketCount, Money spendMoney){
+    private LottoTickets useMachinesToMakeTickets(){
         LottoMachine manualMachine = new ManualLottoMahcine(manualTicketCount);
         LottoMachine randomMahcine = new RandomLottoMachine();
 
