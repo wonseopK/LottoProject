@@ -6,11 +6,15 @@ import java.util.List;
 
 public class LottoTicketValidator {
     public static final int LOTTO_NUMBER_SIZE = 6;
+    public static final String OVER_NUMBER_SIZE = String.format("로또 번호 길이가 %d,자리가 아닙니다.",LOTTO_NUMBER_SIZE);
+    public static final String DUPLICATE_NUMBERS = "로또 번호는 중복 될수 없습니다.";
+
+
 
     public static void validateSize(List<LottoNumber> lottoNumbers) {
         boolean isNotValidNumbers = lottoNumbers.size() != LOTTO_NUMBER_SIZE;
         if (isNotValidNumbers) {
-            throw new IllegalArgumentException("로또 번호 길이가 6자리가 아닙니다.");
+            throw new IllegalArgumentException(OVER_NUMBER_SIZE);
         }
     }
 
@@ -22,7 +26,7 @@ public class LottoTicketValidator {
         boolean isDuplictednumbers = nonDuplicateNumbers != LOTTO_NUMBER_SIZE;
 
         if (isDuplictednumbers) {
-            throw new IllegalArgumentException("로또 번호는 중복 될수 없습니다.");
+            throw new IllegalArgumentException(DUPLICATE_NUMBERS);
         }
     }
 }

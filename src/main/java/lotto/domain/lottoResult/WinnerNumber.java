@@ -5,6 +5,8 @@ import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import java.util.List;
 
 public class WinnerNumber {
+    public static final String BONUS_NUMBER_HAS_WIN_NUMBER = "보너스번호와 당첨번호가 중복됩니다.";
+
     private final BonusNumber bonusNumber;
     private final List<LottoNumber> winnerNumbers;
 
@@ -16,7 +18,7 @@ public class WinnerNumber {
 
     private void validateBonusNumberNotContainWinnerNumber(List<LottoNumber> winnerNumbers, BonusNumber bonusNumber) {
         if (winnerNumbers.contains(bonusNumber.getBonusNumber())) {
-            throw new IllegalArgumentException("보너스번호와 당첨번호가 중복됩니다.");
+            throw new IllegalArgumentException(BONUS_NUMBER_HAS_WIN_NUMBER);
         }
 
     }
