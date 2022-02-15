@@ -4,10 +4,12 @@ public class Money {
     public static final int TICKET_PRICE = 1000;
 
     private long money;
+    private long totalSpendmoney;
 
     private Money(final long money) {
         MoneyValidator.validateMoney(money);
         this.money = money;
+        this.totalSpendmoney = money;
     }
 
     public static Money create(final long inputMoney) {
@@ -30,5 +32,7 @@ public class Money {
         return money;
     }
 
-
+    public long getTotalSpendmoney() {
+        return totalSpendmoney;
+    }
 }

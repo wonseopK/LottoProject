@@ -30,8 +30,8 @@ public class LottoResult {
 
     }
 
-    public String calculateProfit(Money spendMoneye) {
-        double profit = (totalPrizeMoney / spendMoneye.getMoney());
+    public String calculateProfit(Money money) {
+        double profit = (totalPrizeMoney / money.getTotalSpendmoney());
         return String.format("총 수익률은 %.2f입니다.", profit);
     }
 

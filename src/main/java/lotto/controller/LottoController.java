@@ -19,6 +19,7 @@ import java.util.List;
 public class LottoController {
     private final Money spendMoney;
 
+
     public LottoController(Money spendMoney) {
         this.spendMoney = spendMoney;
     }
