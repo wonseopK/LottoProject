@@ -10,21 +10,17 @@ public class OutputView {
     private OutputView() {
     }
 
-    public static void println(final String msg) {
-        System.out.println(msg);
-    }
-
     public static void printAutoOrderCount(Money money) {
         System.out.println(String.format("%d개를 구매했습니다.", money.getTicketCount()));
     }
 
-    public static void printManulAndAutoOrderCount(Money money, int manualTicketCount) {
+    public static void printManulAndAutoOrderCount(Money money, long manualTicketCount) {
         System.out.println(String.format("수동%d개 자동%d개를 구매했습니다.", manualTicketCount, money.getTicketCount()));
     }
 
     public static void printOrderTickets(LottoTickets lottoTickets) {
         for (LottoTicket lottoTicket : lottoTickets.getLottoTickets()) {
-            OutputView.println(lottoTicket.toString());
+            System.out.println(lottoTicket.toString());
         }
     }
 
