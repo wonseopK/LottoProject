@@ -5,6 +5,7 @@ import lotto.domain.lottoResult.LottoResultFactory;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
+import lotto.domain.lottoTicket.lottoMachine.LottoMachine;
 import lotto.domain.lottoTicket.lottoMachine.LottoMachines;
 import lotto.domain.lottoTicket.lottoMachine.ManualLottoMahcine;
 import lotto.domain.lottoTicket.lottoMachine.RandomLottoMachine;
@@ -12,6 +13,7 @@ import lotto.domain.money.Money;
 import lotto.view.InputView;
 import lotto.view.OutputView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LottoController {
@@ -37,9 +39,11 @@ public class LottoController {
     }
 
     private LottoTickets useMachinesToMakeTickets() {
-        LottoMachines lottoMachines = new LottoMachines();
-        lottoMachines.addLottoMachine(new ManualLottoMahcine());
-        lottoMachines.addLottoMachine(new RandomLottoMachine());
+        List<LottoMachine> lottoMachinesContatiner = new ArrayList<>();
+        lottoMachinesContatiner.add(new ManualLottoMahcine());
+        lottoMachinesContatiner.add(new RandomLottoMachine());
+
+        LottoMachines lottoMachines = new LottoMachines(lottoMachinesContatiner);
         List<LottoTicket> lottoTickets = lottoMachines.makeTickets(spendMoney);
         return new LottoTickets(lottoTickets);
     }

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LottoMachines {
-    private final List<LottoMachine> lottoMachines = new ArrayList<>();
+    private final List<LottoMachine> lottoMachines;
 
-    public void addLottoMachine(LottoMachine lottoMachine) {
-        this.lottoMachines.add(lottoMachine);
+    public LottoMachines(List<LottoMachine> lottoMachines) {
+        this.lottoMachines = lottoMachines;
     }
 
     public List<LottoTicket> makeTickets(Money money) {
@@ -20,5 +20,11 @@ public class LottoMachines {
             lottoTickets.addAll(lottoTickets2);
         }
         return lottoTickets;
+    }
+
+    private void validateNotEmptyMachine() {
+        if (lottoMachines.size() == 0){
+            throw new IllegalArgumentException("사용할 로또머신을 추가해주세요");
+        }
     }
 }
