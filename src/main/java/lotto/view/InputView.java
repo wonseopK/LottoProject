@@ -34,7 +34,7 @@ public class InputView {
         return inputNumber;
     }
 
-    public static List<LottoTicket> makeManualLottoTicket(long count){
+    public static List<LottoTicket> inputManualLottoTicket(long count){
         System.out.println("수동으로 구매할 로또의 번호들을 입력해주세요.");
         List<LottoTicket> lottoTickets = new ArrayList<>();
         for (long i = 0; i <count; i++) {
