@@ -39,7 +39,6 @@ public enum Rank {
         return Rank.SECOND;
     }
 
-    //lottoResult에 당첨된것들이 하나도 없을 경우 0반환하도록 테스트하기
     public static long getTotalPrize(List<Rank> lottoResult) {
         return lottoResult.stream()
                 .mapToLong(rank -> rank.prize).sum();
