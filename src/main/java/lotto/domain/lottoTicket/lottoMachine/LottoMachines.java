@@ -2,6 +2,7 @@ package lotto.domain.lottoTicket.lottoMachine;
 
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
+import lotto.domain.money.Money;
 import lotto.view.OutputView;
 
 import java.util.ArrayList;
@@ -14,16 +15,12 @@ public class LottoMachines {
         this.lottoMachines.add(lottoMachine);
     }
 
-    public List<LottoTicket> makeTickets() {
+    public List<LottoTicket> makeTickets(Money money) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         for (LottoMachine lottoMachine : lottoMachines) {
-            List<LottoTicket> lottoTickets2 = lottoMachine.buyTickets();
+            List<LottoTicket> lottoTickets2 = lottoMachine.buyTickets(money);
             lottoTickets.addAll(lottoTickets2);
         }
         return lottoTickets;
-    }
-
-    public List<LottoMachine> getLottoMachines() {
-        return lottoMachines;
     }
 }
