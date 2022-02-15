@@ -17,11 +17,11 @@ class LottoMachinesTest {
         Money money = Money.create(3000);
         LottoMachines lottoMachines = new LottoMachines();
         lottoMachines.addLottoMachine(new RandomLottoMachine(money));
-
+        System.out.println(lottoMachines.getLottoMachines().size());
         List<LottoTicket> lottoTickets = lottoMachines.makeTickets();
 
-        Assertions.assertThat(lottoTickets.size()).isEqualTo(18);
+        Assertions.assertThat(lottoTickets.size()).isEqualTo(3);
 
 
     }
-}
+}ㅇ

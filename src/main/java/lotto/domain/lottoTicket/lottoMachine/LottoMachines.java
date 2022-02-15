@@ -2,6 +2,7 @@ package lotto.domain.lottoTicket.lottoMachine;
 
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
+import lotto.view.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,12 @@ public class LottoMachines {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         for (LottoMachine lottoMachine : lottoMachines) {
             List<LottoTicket> lottoTickets2 = lottoMachine.buyTickets();
-            LottoTickets.lottoTicketsJoiner(lottoTickets, lottoTickets2);
+            lottoTickets.addAll(lottoTickets2);
         }
-        return null;
+        return lottoTickets;
+    }
+
+    public List<LottoMachine> getLottoMachines() {
+        return lottoMachines;
     }
 }
