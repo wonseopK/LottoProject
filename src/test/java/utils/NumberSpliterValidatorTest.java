@@ -1,4 +1,4 @@
-package lotto.domain.validator.utils;
+package utils;
 
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
 import lotto.domain.lottoResult.BonusNumber;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
-class WinnerNumberHandlerValidatorTest {
+class NumberSpliterValidatorTest {
     @DisplayName("스플릿한 숫자의 문자여부 검사")
     @Test
     void name() {

@@ -34,7 +34,7 @@ class InputViewTest {
         Assertions.assertThat(bonusNumber.getBonusNumber()).isEqualTo(LottoNumberBox.getLottoNumber(1));
     }
 
-    @DisplayName("수동 로또번호가 0이ㅌ 수인지 검사하는 기능 테스트")
+    @DisplayName("수동 로또번호가 0이상 수인지 검사하는 기능 테스트")
     @Test
     void positiveTest(){
         int input = -1;

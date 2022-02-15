@@ -1,4 +1,4 @@
-package lotto.domain.utils;
+package utils;
 
 import lotto.domain.lottoTicket.lottoNumber.LottoNumber;
 import lotto.domain.lottoTicket.lottoNumber.LottoNumberBox;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import utils.NumberSpliter;
 
-class WinnerNumberHandlerTest {
+class NumberSpliterTest {
     @DisplayName("당첨 번호를 스트링으로 입력받아 분리해서 당첨번호 객체를 만드는 기능 테스트")
     @Test
     void name() {
