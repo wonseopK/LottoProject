@@ -21,9 +21,9 @@ public class LottoNumberBox {
         return box.get(number);
     }
 
-    private static void validateLottoNumber(int inputNumber){
+    private static void validateLottoNumber(int inputNumber) {
         boolean isNotLottoRange = inputNumber > LOTTO_MAX_NUMBER || inputNumber < LOTTO_MIN_NUMBER;
-        if(isNotLottoRange){
+        if (isNotLottoRange) {
             throw new IllegalArgumentException("1~45사이의 숫자만 꺼내올수있습니다.");
         }
     }

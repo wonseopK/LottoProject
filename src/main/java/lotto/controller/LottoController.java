@@ -5,7 +5,6 @@ import lotto.domain.lottoResult.LottoResultFactory;
 import lotto.domain.lottoResult.WinnerNumber;
 import lotto.domain.lottoTicket.LottoTicket;
 import lotto.domain.lottoTicket.LottoTickets;
-import lotto.domain.lottoTicket.lottoMachine.LottoMachine;
 import lotto.domain.lottoTicket.lottoMachine.LottoMachines;
 import lotto.domain.lottoTicket.lottoMachine.ManualLottoMahcine;
 import lotto.domain.lottoTicket.lottoMachine.RandomLottoMachine;
@@ -37,7 +36,7 @@ public class LottoController {
         return lottoTickets;
     }
 
-    private LottoTickets useMachinesToMakeTickets(){
+    private LottoTickets useMachinesToMakeTickets() {
         LottoMachines lottoMachines = new LottoMachines();
         lottoMachines.addLottoMachine(new ManualLottoMahcine());
         lottoMachines.addLottoMachine(new RandomLottoMachine());

@@ -20,7 +20,7 @@ public class ManualLottoMahcine implements LottoMachine {
     public List<LottoTicket> buyTickets(Money money) {
         List<LottoTicket> lottoTickets = new ArrayList<>();
         getManualCount(InputView.getManualTicketCount(money));
-        if(count > 0){
+        if (count > 0) {
             money.useMoneyToBuyOneTicket(count);
             lottoTickets = InputView.inputManualLottoTicket(count);
         }
